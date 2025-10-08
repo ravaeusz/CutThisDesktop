@@ -1,0 +1,128 @@
+# ==========================
+# ARQUIVOS GERADOS PELA IDE
+# ==========================
+*.dcu
+*.dcp
+*.bak
+*.drc
+*.map
+*.cfg
+*.local
+*.identcache
+*.tvsconfig
+*.stat
+*.dsk
+*.deployproj
+*.resource
+*.hpp
+*.tgs
+*.obj
+*.pch
+*.~*
+
+# ==========================
+# BINÁRIOS / BUILD
+# ==========================
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.so
+*.apk
+*.ipa
+*.app
+*.lib
+*.o
+*.ocx
+
+# Pastas de build
+/Bin/
+/bin/
+/Debug/
+/debug/
+/Release/
+/release/
+/Win32/
+/Win64/
+/iOS/
+/Android/
+/__history/
+/__recovery/
+/output/
+/build/
+/Build/
+
+# ==========================
+# ARQUIVOS TEMPORÁRIOS
+# ==========================
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*.log
+*.cache
+*.bak
+*.orig
+*.rej
+
+# ==========================
+# CONFIGURAÇÕES LOCAIS
+# ==========================
+*.local
+*.dsk
+*.tvsconfig
+*.vrc
+*.sdf
+*.sqlite-journal
+
+# ==========================
+# PROJETOS / IDE
+# ==========================
+# (mantém apenas arquivos essenciais)
+# NÃO ignore: .dpr .pas .dfm .fmx .dproj .groupproj
+# Ignore backups ou auxiliares:
+*.dproj.local
+*.groupproj.local
+*.~dsk
+
+# ==========================
+# FIREMONKEY / MOBILE
+# ==========================
+# Cache e builds específicos
+/FMX/
+/Android/
+*.apk
+*.aab
+*.ipa
+*.dSYM
+*.xcarchive
+
+# ==========================
+# GIT / EDITORES
+# ==========================
+*.swp
+*.swo
+*.DS_Store
+.idea/
+.vscode/
+.vs/
+*.orig
+
+# ==========================
+# AMBIENTE / DEPLOY
+# ==========================
+.env
+*.ini
+*.config
+*.db
+*.sqlite
+*.fdb
+*.log
+
+# ==========================
+# OUTROS
+# ==========================
+# backups automáticos
+*~.*
+*.bak*
+*.tmp
