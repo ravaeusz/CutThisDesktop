@@ -1,0 +1,15 @@
+object FormularioLogin: TFormularioLogin
+  Left = 528
+  Top = 190
+  Caption = 'FormularioLogin'
+  ClientHeight = 467
+  ClientWidth = 667
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poDesigned
+  TextHeight = 15
+end
