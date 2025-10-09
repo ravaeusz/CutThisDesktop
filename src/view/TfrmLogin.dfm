@@ -106,6 +106,7 @@ object FormularioLogin: TFormularioLogin
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 2
+      OnClick = BtnLoginClick
     end
     object BtnClose: TButton
       Left = 376
