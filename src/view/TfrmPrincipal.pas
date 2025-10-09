@@ -9,6 +9,7 @@ uses
 type
   TFormularioPrincipal = class(TForm)
     procedure FormShow(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -24,6 +25,7 @@ implementation
 
 uses TfrmLogin;
 
+
 procedure TFormularioPrincipal.FormShow(Sender: TObject);
 var
 login : TFormularioLogin;
@@ -34,7 +36,6 @@ login.ShowModal;
 finally
 login.Free;
 end;
-
 end;
 
 end.

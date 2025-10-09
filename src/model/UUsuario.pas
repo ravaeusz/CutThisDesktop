@@ -5,12 +5,10 @@ interface
 type
   UUser = class
 private
-    FEmail: string;
     FNome: string;
     FSenha: Integer;
 
 public
-  property Email: string read FEmail write FEmail;
   property Nome: string read FNome write FNome;
   property Senha: Integer read FSenha write FSenha;
 

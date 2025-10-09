@@ -1,16 +1,15 @@
 object FormularioPrincipal: TFormularioPrincipal
-  Left = 579
-  Top = 208
+  Left = 0
+  Top = 0
   Caption = 'FormularioPrincipal'
-  ClientHeight = 484
-  ClientWidth = 577
+  ClientHeight = 441
+  ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poDesigned
   OnShow = FormShow
   TextHeight = 15
 end

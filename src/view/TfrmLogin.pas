@@ -37,7 +37,9 @@ uses TfrmPrincipal;
 
 procedure TFormularioLogin.BtnCloseClick(Sender: TObject);
 begin
-TfrmPrincipal.FormularioPrincipal.Destroy;
+Application.Terminate;
 end;
+
+
 
 end.
