@@ -7,7 +7,7 @@ uses UUsuario, UConexão, FireDAC.Comp.Client;
 type
 TUserDAO = class
   public
-  procedure doLogin(AUser: UUser);
+  function doLogin(AUser: TUser) : Boolean;
 end;
 
 implementation
@@ -20,7 +20,7 @@ implementation
 
 { TUserDAO }
 
-procedure TUserDAO.doLogin(AUser: UUser);
+function TUserDAO.doLogin(AUser: TUser) : Boolean;
 var
 Q : TFDQuery;
 begin
@@ -30,9 +30,13 @@ try
 Q.Connection := TConexao.getConexao;
 Q.SQL.Text := 'Select * from USUARIO where US_NOME = :NOME and US_SENHA = :SENHA' ;
 Q.ParamByName('NOME').AsString := AUser.Nome;
-Q.ParamByName('NOME').AsInteger := AUser.Senha;
+Q.ParamByName('SENHA').AsInteger := AUser.Senha;
 Q.Open;
 
+if not Q.IsEmpty then
+Result:= true
+else
+Result := false;
 
 finally
   Q.Free;

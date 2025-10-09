@@ -34,7 +34,7 @@ implementation
 
 {$R *.dfm}
 
-uses TfrmPrincipal, uUserController;
+uses TfrmPrincipal, uUserController, UserDAO;
 
 procedure TFormularioLogin.BtnCloseClick(Sender: TObject);
 begin
@@ -46,15 +46,27 @@ end;
 procedure TFormularioLogin.BtnLoginClick(Sender: TObject);
 var
 login : TUserController;
+resultado : boolean;
 begin
 login := TUserController.Create;
 try
+login.NOME := EditNome.Text;
+login.SENHA := StrToInt(EditSenha.Text);
+
+
+resultado := login.Login(login.NOME, login.SENHA);
+
+if resultado then
+close
+else
+ShowMessage('Erro')
+
 
 
 finally
   login.Free;
 end;
-  login.Free;
+
 end;
 
 end.

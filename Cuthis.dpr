@@ -2,6 +2,8 @@ program Cuthis;
 
 uses
   Vcl.Forms,
+  FireDAC.DApt,
+  FireDAC.Stan.Def,
   TfrmPrincipal in 'src\view\TfrmPrincipal.pas' {FormularioPrincipal},
   TfrmLogin in 'src\view\TfrmLogin.pas' {FormularioLogin},
   UUsuario in 'src\model\UUsuario.pas',

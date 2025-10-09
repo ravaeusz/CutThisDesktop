@@ -1,9 +1,21 @@
-unit UConex�o;
+﻿unit UConexão;
 
 interface
 
 uses
-System.SysUtils, FireDAC.Comp.Client;
+ System.SysUtils,
+  FireDAC.Comp.Client,
+  FireDAC.Stan.Def,
+  FireDAC.Stan.Async,
+  FireDAC.Stan.Param,
+  FireDAC.Stan.Intf,
+  FireDAC.UI.Intf,
+  FireDAC.Phys,
+  FireDAC.Phys.Intf,
+  FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef,
+  FireDAC.DApt,
+  FireDAC.VCLUI.Wait;
 
 type
 TConexao = class
@@ -22,12 +34,13 @@ class function TConexao.getConexao: TFDConnection;
 begin
 if not Assigned(FConexao) then
 begin
+
 FConexao := TFDConnection.Create(nil);
 FConexao.DriverName := 'FB';
 
 FConexao.Params.Values['Database'] := 'C:\Sistema\CutThis\src\dados\CUTHIS.FDB';
 FConexao.Params.Values['User_Name'] := 'SYSDBA';
-FConexao.Params.Values['Password'] := 'Office25';
+FConexao.Params.Values['Password'] := 'masterkey';
 FConexao.Params.Values['Server'] := 'localhost';
 FConexao.Params.Values['Protocol'] := 'local';
 FConexao.LoginPrompt := False;

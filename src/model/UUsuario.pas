@@ -3,7 +3,7 @@ unit UUsuario;
 interface
 
 type
-  UUser = class
+  TUser = class
 private
     FNome: string;
     FSenha: Integer;

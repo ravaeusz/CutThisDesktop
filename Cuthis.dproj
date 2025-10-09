@@ -128,11 +128,9 @@
         </DelphiCompile>
         <DCCReference Include="src\view\TfrmPrincipal.pas">
             <Form>FormularioPrincipal</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\view\TfrmLogin.pas">
             <Form>FormularioLogin</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\model\UUsuario.pas"/>
         <DCCReference Include="src\dao\UConexão.pas"/>
