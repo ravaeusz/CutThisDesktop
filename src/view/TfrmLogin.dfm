@@ -12,6 +12,7 @@ object FormularioLogin: TFormularioLogin
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 426
@@ -78,6 +79,7 @@ object FormularioLogin: TFormularioLogin
       Font.Style = []
       ParentFont = False
       TabOrder = 0
+      OnKeyPress = EditNomeKeyPress
     end
     object EditSenha: TEdit
       Left = 112
@@ -92,6 +94,7 @@ object FormularioLogin: TFormularioLogin
       Font.Style = []
       ParentFont = False
       TabOrder = 1
+      OnKeyPress = EditSenhaKeyPress
     end
     object BtnLogin: TButton
       Left = 112
@@ -107,6 +110,7 @@ object FormularioLogin: TFormularioLogin
       ParentFont = False
       TabOrder = 2
       OnClick = BtnLoginClick
+      OnKeyPress = BtnLoginKeyPress
     end
     object BtnClose: TButton
       Left = 376

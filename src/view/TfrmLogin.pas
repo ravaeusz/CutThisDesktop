@@ -21,6 +21,11 @@ type
     Label2: TLabel;
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnLoginClick(Sender: TObject);
+    procedure EditNomeKeyPress(Sender: TObject; var Key: Char);
+    procedure EditSenhaKeyPress(Sender: TObject; var Key: Char);
+    procedure BtnLoginKeyPress(Sender: TObject; var Key: Char);
+    procedure FormShow(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -42,7 +47,6 @@ Application.Terminate;
 end;
 
 
-
 procedure TFormularioLogin.BtnLoginClick(Sender: TObject);
 var
 login : TUserController;
@@ -50,8 +54,10 @@ resultado : boolean;
 begin
 login := TUserController.Create;
 try
+
 login.NOME := EditNome.Text;
-login.SENHA := StrToInt(EditSenha.Text);
+if EditSenha.text = '' then EditSenha.text := '0';
+login.SENHA := StrToInt(EditSenha.text);
 
 
 resultado := login.Login(login.NOME, login.SENHA);
@@ -59,14 +65,39 @@ resultado := login.Login(login.NOME, login.SENHA);
 if resultado then
 close
 else
-ShowMessage('Erro')
-
-
+ShowMessage('User não encontrado, verifique!');
+EditSenha.text := '';
+EditNome.SetFocus;
 
 finally
   login.Free;
 end;
 
+end;
+
+
+
+procedure TFormularioLogin.BtnLoginKeyPress(Sender: TObject; var Key: Char);
+begin
+if key = char(#13) then
+BtnLogin.Click;
+end;
+
+procedure TFormularioLogin.EditNomeKeyPress(Sender: TObject; var Key: Char);
+begin
+if key = char(#13) then
+EditSenha.SetFocus;
+end;
+
+procedure TFormularioLogin.EditSenhaKeyPress(Sender: TObject; var Key: Char);
+begin
+if key = char(#13) then
+BtnLogin.SetFocus;
+end;
+
+procedure TFormularioLogin.FormShow(Sender: TObject);
+begin
+EditNome.SetFocus;
 end;
 
 end.
