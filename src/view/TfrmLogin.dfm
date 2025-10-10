@@ -1,6 +1,6 @@
 object FormularioLogin: TFormularioLogin
-  Left = 443
-  Top = 173
+  Left = 409
+  Top = 156
   BorderStyle = bsNone
   Caption = 'FormularioLogin'
   ClientHeight = 604
@@ -11,7 +11,7 @@ object FormularioLogin: TFormularioLogin
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poDesigned
+  Position = poScreenCenter
   OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
@@ -26,7 +26,7 @@ object FormularioLogin: TFormularioLogin
     TabOrder = 0
     object LabelTitulo: TLabel
       Left = 25
-      Top = 126
+      Top = 118
       Width = 384
       Height = 72
       Alignment = taCenter
@@ -40,7 +40,7 @@ object FormularioLogin: TFormularioLogin
     end
     object Label1: TLabel
       Left = 112
-      Top = 236
+      Top = 204
       Width = 85
       Height = 36
       Alignment = taCenter
@@ -54,7 +54,7 @@ object FormularioLogin: TFormularioLogin
     end
     object Label2: TLabel
       Left = 111
-      Top = 323
+      Top = 291
       Width = 102
       Height = 36
       Alignment = taCenter
@@ -68,10 +68,11 @@ object FormularioLogin: TFormularioLogin
     end
     object EditNome: TEdit
       Left = 112
-      Top = 278
+      Top = 246
       Width = 200
       Height = 39
       Alignment = taCenter
+      CharCase = ecUpperCase
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -24
@@ -83,7 +84,7 @@ object FormularioLogin: TFormularioLogin
     end
     object EditSenha: TEdit
       Left = 112
-      Top = 365
+      Top = 333
       Width = 200
       Height = 39
       Alignment = taCenter
@@ -92,15 +93,17 @@ object FormularioLogin: TFormularioLogin
       Font.Height = -24
       Font.Name = 'JetBrains Mono ExtraLight'
       Font.Style = []
+      NumbersOnly = True
       ParentFont = False
       TabOrder = 1
       OnKeyPress = EditSenhaKeyPress
     end
     object BtnLogin: TButton
       Left = 112
-      Top = 433
+      Top = 401
       Width = 200
       Height = 40
+      Cursor = crHandPoint
       Caption = 'FAZER LOGIN'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -117,6 +120,7 @@ object FormularioLogin: TFormularioLogin
       Top = 0
       Width = 57
       Height = 40
+      Cursor = crHandPoint
       Caption = 'X'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -135,7 +139,7 @@ object FormularioLogin: TFormularioLogin
     Height = 604
     Align = alLeft
     BevelOuter = bvNone
-    Color = 3947580
+    Color = clGrayText
     ParentBackground = False
     TabOrder = 1
     object ImgLogo: TImage
