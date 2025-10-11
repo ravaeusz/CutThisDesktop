@@ -141,6 +141,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\model\UViagem.pas"/>
+        <DCCReference Include="src\dao\ViagemDAO.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

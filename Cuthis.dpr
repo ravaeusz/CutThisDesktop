@@ -11,7 +11,8 @@ uses
   UserDAO in 'src\dao\UserDAO.pas',
   uUserController in 'src\controller\uUserController.pas',
   TfrmCadastroViagem in 'src\view\TfrmCadastroViagem.pas' {FormularioCadastroViagem},
-  UViagem in 'src\model\UViagem.pas';
+  UViagem in 'src\model\UViagem.pas',
+  ViagemDAO in 'src\dao\ViagemDAO.pas';
 
 {$R *.res}
 

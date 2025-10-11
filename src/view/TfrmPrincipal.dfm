@@ -305,6 +305,7 @@ object FormularioPrincipal: TFormularioPrincipal
       Width = 784
       Height = 515
       Align = alClient
+      DataSource = dsViagem
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
