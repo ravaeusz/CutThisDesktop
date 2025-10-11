@@ -9,7 +9,9 @@ uses
   UUsuario in 'src\model\UUsuario.pas',
   UConexão in 'src\dao\UConexão.pas',
   UserDAO in 'src\dao\UserDAO.pas',
-  uUserController in 'src\controller\uUserController.pas';
+  uUserController in 'src\controller\uUserController.pas',
+  TfrmCadastroViagem in 'src\view\TfrmCadastroViagem.pas' {FormularioCadastroViagem},
+  UViagem in 'src\model\UViagem.pas';
 
 {$R *.res}
 
@@ -17,5 +19,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFormularioPrincipal, FormularioPrincipal);
+  Application.CreateForm(TFormularioCadastroViagem, FormularioCadastroViagem);
   Application.Run;
 end.

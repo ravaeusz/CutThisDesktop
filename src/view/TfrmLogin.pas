@@ -50,12 +50,15 @@ end;
 procedure TFormularioLogin.BtnLoginClick(Sender: TObject);
 var
 login : TUserController;
+user : TFormularioPrincipal;
 resultado : boolean;
 begin
 login := TUserController.Create;
+
 try
 
 login.NOME := EditNome.Text;
+FormularioPrincipal.getUser(EditNome.Text);
 if EditSenha.text = '' then EditSenha.text := '0';
 login.SENHA := StrToInt(EditSenha.text);
 

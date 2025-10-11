@@ -1,10 +1,10 @@
 object FormularioPrincipal: TFormularioPrincipal
-  Left = 391
-  Top = 138
-  BorderStyle = bsSingle
+  Left = 409
+  Top = 121
+  BorderStyle = bsNone
   Caption = 'FormularioPrincipal'
-  ClientHeight = 584
-  ClientWidth = 890
+  ClientHeight = 623
+  ClientWidth = 784
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,14 +12,14 @@ object FormularioPrincipal: TFormularioPrincipal
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
-  WindowState = wsMaximized
+  OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 890
-    Height = 584
+    Width = 784
+    Height = 623
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
@@ -28,7 +28,7 @@ object FormularioPrincipal: TFormularioPrincipal
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 890
+      Width = 784
       Height = 57
       Align = alTop
       BevelOuter = bvNone
@@ -40,7 +40,7 @@ object FormularioPrincipal: TFormularioPrincipal
       ParentBackground = False
       TabOrder = 0
       object Label1: TLabel
-        Left = 751
+        Left = 645
         Top = 10
         Width = 119
         Height = 37
@@ -84,6 +84,7 @@ object FormularioPrincipal: TFormularioPrincipal
           Font.Style = []
           ParentFont = False
           TabOrder = 0
+          OnClick = BtnCadastroClick
         end
       end
       object Panel4: TPanel
@@ -166,8 +167,8 @@ object FormularioPrincipal: TFormularioPrincipal
     end
     object Panel7: TPanel
       Left = 0
-      Top = 533
-      Width = 890
+      Top = 572
+      Width = 784
       Height = 51
       Align = alBottom
       BevelOuter = bvNone
@@ -268,7 +269,7 @@ object FormularioPrincipal: TFormularioPrincipal
         ExplicitHeight = 44
       end
       object Panel8: TPanel
-        Left = 584
+        Left = 478
         Top = 5
         Width = 286
         Height = 41
@@ -281,7 +282,6 @@ object FormularioPrincipal: TFormularioPrincipal
         Padding.Bottom = 5
         ParentBackground = False
         TabOrder = 0
-        ExplicitHeight = 38
         object Label2: TLabel
           Left = 5
           Top = 5
@@ -299,10 +299,27 @@ object FormularioPrincipal: TFormularioPrincipal
         end
       end
     end
+    object DBGridViagem: TDBGrid
+      Left = 0
+      Top = 57
+      Width = 784
+      Height = 515
+      Align = alClient
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
+    end
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
     Left = 512
     Top = 544
+  end
+  object dsViagem: TDataSource
+    Left = 480
+    Top = 543
   end
 end

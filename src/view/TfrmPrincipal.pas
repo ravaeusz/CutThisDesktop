@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, DateUtils,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, Data.DB, Vcl.Grids, Vcl.DBGrids;
 
 type
   TFormularioPrincipal = class(TForm)
@@ -24,13 +24,19 @@ type
     Panel8: TPanel;
     Timer1: TTimer;
     Image1: TImage;
+    dsViagem: TDataSource;
+    DBGridViagem: TDBGrid;
     procedure FormShow(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure BtnCadastroClick(Sender: TObject);
 
   private
-    { Private declarations }
+    Ffuser: string;
+
   public
-    { Public declarations }
+    property fuser: string read Ffuser write Ffuser;
+    procedure getUser(AUser : string);
   end;
 
 var
@@ -40,8 +46,47 @@ implementation
 
 {$R *.dfm}
 
-uses TfrmLogin;
+uses TfrmLogin, TfrmCadastroViagem ;
 
+
+procedure TFormularioPrincipal.BtnCadastroClick(Sender: TObject);
+var
+cadastro :  TFormularioCadastroViagem;
+begin
+cadastro := TFormularioCadastroViagem.Create(nil);
+
+try
+cadastro.ShowModal;
+
+finally
+cadastro.Free;
+end;
+
+end;
+
+procedure TFormularioPrincipal.FormCreate(Sender: TObject);
+var
+col : TColumn;
+begin
+DBGridViagem.Columns.Clear;
+
+col := DBGridViagem.Columns.Add;
+col.FieldName := 'VI_ID';
+col.Title.Caption := 'ID';
+col.Width := 50;
+
+col := DBGridViagem.Columns.Add;
+col.FieldName := 'VI_NOME';
+col.Title.Caption := 'NOME';
+col.Width := 200;
+
+col := DBGridViagem.Columns.Add;
+col.FieldName := 'VI_DESC';
+col.Title.Caption := 'DESCRICAO';
+col.Width := 600;
+
+
+end;
 
 procedure TFormularioPrincipal.FormShow(Sender: TObject);
 var
@@ -54,6 +99,11 @@ login.ShowModal;
 finally
 login.Free;
 end;
+end;
+
+procedure TFormularioPrincipal.getUser(AUser: string);
+begin
+Label1.Caption := Auser;
 end;
 
 procedure TFormularioPrincipal.Timer1Timer(Sender: TObject);

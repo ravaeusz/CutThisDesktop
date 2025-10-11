@@ -136,6 +136,11 @@
         <DCCReference Include="src\dao\UConexão.pas"/>
         <DCCReference Include="src\dao\UserDAO.pas"/>
         <DCCReference Include="src\controller\uUserController.pas"/>
+        <DCCReference Include="src\view\TfrmCadastroViagem.pas">
+            <Form>FormularioCadastroViagem</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\model\UViagem.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
