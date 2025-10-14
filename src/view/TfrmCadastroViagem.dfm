@@ -3,7 +3,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
   Top = 190
   Caption = 'FormularioCadastroViagem'
   ClientHeight = 394
-  ClientWidth = 311
+  ClientWidth = 312
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 311
+    Width = 312
     Height = 394
     Align = alClient
     BevelOuter = bvNone
@@ -23,13 +23,10 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
     Padding.Top = 20
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 24
-    ExplicitTop = 16
-    ExplicitHeight = 449
     object LblTitulo: TLabel
       Left = 0
       Top = 20
-      Width = 311
+      Width = 312
       Height = 21
       Align = alTop
       Alignment = taCenter
@@ -40,15 +37,15 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       Font.Name = 'JetBrains Mono ExtraBold'
       Font.Style = []
       ParentFont = False
-      ExplicitTop = 44
+      ExplicitWidth = 230
     end
     object Label1: TLabel
-      Left = 40
-      Top = 77
-      Width = 50
+      Left = 20
+      Top = 61
+      Width = 70
       Height = 21
       Alignment = taCenter
-      Caption = 'Nome:'
+      Caption = '* Nome:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -57,12 +54,40 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       ParentFont = False
     end
     object Label2: TLabel
+      Left = 20
+      Top = 125
+      Width = 130
+      Height = 21
+      Alignment = taCenter
+      Caption = '* Descri'#231#227'o :'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'JetBrains Mono ExtraBold'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
       Left = 40
-      Top = 149
+      Top = 189
+      Width = 120
+      Height = 21
+      Alignment = taCenter
+      Caption = 'Data Inicio:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'JetBrains Mono ExtraBold'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 40
+      Top = 253
       Width = 110
       Height = 21
       Alignment = taCenter
-      Caption = 'Descri'#231#227'o :'
+      Caption = 'Data Final:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -72,25 +97,58 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
     end
     object EditNomeViagem: TEdit
       Left = 40
-      Top = 104
+      Top = 88
       Width = 233
-      Height = 25
+      Height = 23
       TabOrder = 0
     end
     object EditDescViagem: TEdit
       Left = 40
-      Top = 176
+      Top = 152
       Width = 233
-      Height = 97
+      Height = 23
       TabOrder = 1
     end
     object a: TButton
       Left = 40
-      Top = 320
+      Top = 333
       Width = 233
       Height = 41
       Caption = 'Cadastrar'
       TabOrder = 2
+      OnClick = aClick
+    end
+    object MaskEditDataInicio: TMaskEdit
+      Left = 40
+      Top = 216
+      Width = 233
+      Height = 29
+      EditMask = '!99/99/0000;1;_'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      MaxLength = 10
+      ParentFont = False
+      TabOrder = 3
+      Text = '  /  /    '
+    end
+    object MaskEditDataFinal: TMaskEdit
+      Left = 40
+      Top = 280
+      Width = 233
+      Height = 29
+      EditMask = '!99/99/0000;1;_'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      MaxLength = 10
+      ParentFont = False
+      TabOrder = 4
+      Text = '  /  /    '
     end
   end
 end

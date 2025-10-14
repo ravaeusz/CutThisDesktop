@@ -142,6 +142,7 @@
         </DCCReference>
         <DCCReference Include="src\model\UViagem.pas"/>
         <DCCReference Include="src\dao\ViagemDAO.pas"/>
+        <DCCReference Include="src\controller\UViagemController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

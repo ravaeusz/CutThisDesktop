@@ -12,7 +12,8 @@ uses
   uUserController in 'src\controller\uUserController.pas',
   TfrmCadastroViagem in 'src\view\TfrmCadastroViagem.pas' {FormularioCadastroViagem},
   UViagem in 'src\model\UViagem.pas',
-  ViagemDAO in 'src\dao\ViagemDAO.pas';
+  ViagemDAO in 'src\dao\ViagemDAO.pas',
+  UViagemController in 'src\controller\UViagemController.pas';
 
 {$R *.res}
 
