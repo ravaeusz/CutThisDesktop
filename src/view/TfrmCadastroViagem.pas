@@ -33,7 +33,7 @@ implementation
 
 {$R *.dfm}
 
-uses uUserController, UViagem, UViagemController;
+uses uUserController, UViagem, UViagemController, UGridDAO, TfrmPrincipal;
 
 procedure TFormularioCadastroViagem.aClick(Sender: TObject);
 var
@@ -44,6 +44,7 @@ begin
 Controller := TViagemControler.Create;
 Model := TViagem.Create;
 
+
 Model.Nome := EditNomeViagem.Text;
 Model.Descricao := EditDescViagem.Text;
 Model.dataInicio := StrToDate(MaskEditDataInicio.Text);
@@ -52,6 +53,8 @@ Model.dataFinal := StrToDate(MaskEditDataFinal.Text);
 resultado := Controller.postViagem(Model);
 
 ShowMessage(resultado);
+FormularioPrincipal.dsViagem.DataSet.Refresh;
+close;
 
 end;
 

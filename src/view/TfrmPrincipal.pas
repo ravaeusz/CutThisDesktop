@@ -28,13 +28,12 @@ type
     DBGridViagem: TDBGrid;
     procedure FormShow(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure BtnCadastroClick(Sender: TObject);
+    procedure DBGridViagemDblClick(Sender: TObject);
 
   private
     Ffuser: string;
-
-  public
+    public
     property fuser: string read Ffuser write Ffuser;
     procedure getUser(AUser : string);
   end;
@@ -46,8 +45,89 @@ implementation
 
 {$R *.dfm}
 
-uses TfrmLogin, TfrmCadastroViagem ;
+uses TfrmLogin, TfrmCadastroViagem , UGridDAO , UGridController, ViagemDAO,
+  TfrmViagem;
 
+
+procedure TFormularioPrincipal.DBGridViagemDblClick(Sender: TObject);
+var
+formViagem : TFormularioViagem;
+grid : TGridController;
+dlg : TForm;
+btnEditar, btnExcluir, btnVoltar: TButton;
+begin
+dlg := CreateMessageDialog('Escolha uma ação: ', TMsgDlgType.mtWarning, []);
+grid := TGridController.Create(Self);
+formViagem := TFormularioViagem.Create(nil);
+try
+
+    btnEditar := TButton.Create(dlg);
+    btnEditar.Parent := dlg;
+    btnEditar.Caption := 'Entrar';
+    btnEditar.ModalResult := mrYes;
+    btnEditar.Left := 10;
+    btnEditar.Top := dlg.ClientHeight - 40;
+
+
+    btnExcluir := TButton.Create(dlg);
+    btnExcluir.Parent := dlg;
+    btnExcluir.Caption := 'Excluir';
+    btnExcluir.ModalResult := mrNo;
+    btnExcluir.Left := btnEditar.Left + btnEditar.Width + 10;
+    btnExcluir.Top := btnEditar.Top;
+
+    btnVoltar := TButton.Create(dlg);
+    btnVoltar.Parent := dlg;
+    btnVoltar.Caption := 'Voltar';
+    btnVoltar.ModalResult := mrCancel;
+    btnVoltar.Left := btnExcluir.Left + btnExcluir.Width + 10;
+    btnVoltar.Top := btnEditar.Top;
+
+    case dlg.ShowModal of
+    mrYes:
+    begin
+
+    formViagem.ShowModal;
+    end;
+
+    mrNo:
+    begin
+
+    grid.deleteItemGrid(dsViagem.DataSet.FieldByName('VI_ID').AsInteger);
+    ShowMessage('Você excluiu a viagem : ' +dsViagem.DataSet.FieldByName('VI_NOME').AsString);
+    dsViagem.DataSet.Refresh;
+    end;
+    mrCancel: Exit;
+    end;
+finally
+  dlg.Free;
+  grid.Destroy;
+  formViagem.Free;
+end;
+
+end;
+
+
+procedure TFormularioPrincipal.FormShow(Sender: TObject);
+var
+login : TFormularioLogin;
+grid : TGridController;
+begin
+login := TFormularioLogin.Create(nil);
+grid := TGridController.Create(Self);
+
+try
+login.ShowModal;
+finally
+login.Free;
+end;
+
+
+grid.madeGrid;
+
+
+
+end;
 
 procedure TFormularioPrincipal.BtnCadastroClick(Sender: TObject);
 var
@@ -62,43 +142,6 @@ finally
 cadastro.Free;
 end;
 
-end;
-
-procedure TFormularioPrincipal.FormCreate(Sender: TObject);
-var
-col : TColumn;
-begin
-DBGridViagem.Columns.Clear;
-
-col := DBGridViagem.Columns.Add;
-col.FieldName := 'VI_ID';
-col.Title.Caption := 'ID';
-col.Width := 50;
-
-col := DBGridViagem.Columns.Add;
-col.FieldName := 'VI_NOME';
-col.Title.Caption := 'NOME';
-col.Width := 200;
-
-col := DBGridViagem.Columns.Add;
-col.FieldName := 'VI_DESC';
-col.Title.Caption := 'DESCRICAO';
-col.Width := 600;
-
-
-end;
-
-procedure TFormularioPrincipal.FormShow(Sender: TObject);
-var
-login : TFormularioLogin;
-begin
-login := TFormularioLogin.Create(nil);
-
-try
-login.ShowModal;
-finally
-login.Free;
-end;
 end;
 
 procedure TFormularioPrincipal.getUser(AUser: string);

@@ -39,7 +39,7 @@ implementation
 
 {$R *.dfm}
 
-uses TfrmPrincipal, uUserController, UserDAO;
+uses TfrmPrincipal, uUserController, UserDAO, TfrmViagem;
 
 procedure TFormularioLogin.BtnCloseClick(Sender: TObject);
 begin
@@ -51,10 +51,10 @@ procedure TFormularioLogin.BtnLoginClick(Sender: TObject);
 var
 login : TUserController;
 user : TFormularioPrincipal;
+userViagem : TFormularioViagem;
 resultado : boolean;
 begin
 login := TUserController.Create;
-
 try
 
 login.NOME := EditNome.Text;

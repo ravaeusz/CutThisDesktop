@@ -13,14 +13,19 @@ uses
   TfrmCadastroViagem in 'src\view\TfrmCadastroViagem.pas' {FormularioCadastroViagem},
   UViagem in 'src\model\UViagem.pas',
   ViagemDAO in 'src\dao\ViagemDAO.pas',
-  UViagemController in 'src\controller\UViagemController.pas';
+  UViagemController in 'src\controller\UViagemController.pas',
+  UGridDAO in 'src\dao\UGridDAO.pas',
+  UGridController in 'src\controller\UGridController.pas',
+  TfrmViagem in 'src\view\TfrmViagem.pas' {FormularioViagem};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+
   Application.CreateForm(TFormularioPrincipal, FormularioPrincipal);
-  Application.CreateForm(TFormularioCadastroViagem, FormularioCadastroViagem);
+  Application.CreateForm(TFormularioLogin, FormularioLogin);
+  Application.CreateForm(TFormularioViagem, FormularioViagem);
   Application.Run;
 end.

@@ -100,6 +100,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       Top = 88
       Width = 233
       Height = 23
+      CharCase = ecUpperCase
       TabOrder = 0
     end
     object EditDescViagem: TEdit
@@ -107,6 +108,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       Top = 152
       Width = 233
       Height = 23
+      CharCase = ecUpperCase
       TabOrder = 1
     end
     object a: TButton

@@ -143,6 +143,12 @@
         <DCCReference Include="src\model\UViagem.pas"/>
         <DCCReference Include="src\dao\ViagemDAO.pas"/>
         <DCCReference Include="src\controller\UViagemController.pas"/>
+        <DCCReference Include="src\dao\UGridDAO.pas"/>
+        <DCCReference Include="src\controller\UGridController.pas"/>
+        <DCCReference Include="src\view\TfrmViagem.pas">
+            <Form>FormularioViagem</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

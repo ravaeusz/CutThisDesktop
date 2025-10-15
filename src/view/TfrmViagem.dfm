@@ -1,10 +1,10 @@
-object FormularioPrincipal: TFormularioPrincipal
+object FormularioViagem: TFormularioViagem
   Left = 477
-  Top = 173
+  Top = 156
   BorderStyle = bsNone
-  Caption = 'FormularioPrincipal'
-  ClientHeight = 643
-  ClientWidth = 784
+  Caption = 'FormularioViagem'
+  ClientHeight = 682
+  ClientWidth = 800
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,22 +12,26 @@ object FormularioPrincipal: TFormularioPrincipal
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
-  OnShow = FormShow
+  OnCreate = FormCreate
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 784
-    Height = 643
+    Width = 800
+    Height = 682
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
+    ExplicitLeft = 400
+    ExplicitTop = 416
+    ExplicitWidth = 185
+    ExplicitHeight = 41
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 784
+      Width = 800
       Height = 57
       Align = alTop
       BevelOuter = bvNone
@@ -38,9 +42,8 @@ object FormularioPrincipal: TFormularioPrincipal
       Padding.Bottom = 10
       ParentBackground = False
       TabOrder = 0
-      ExplicitTop = -6
       object Label1: TLabel
-        Left = 645
+        Left = 661
         Top = 10
         Width = 119
         Height = 37
@@ -54,121 +57,14 @@ object FormularioPrincipal: TFormularioPrincipal
         Font.Style = []
         ParentColor = False
         ParentFont = False
-        ExplicitHeight = 36
-      end
-      object Panel3: TPanel
-        Left = 20
-        Top = 10
-        Width = 121
-        Height = 37
-        Align = alLeft
-        BevelOuter = bvNone
-        Color = clGrayText
-        Padding.Left = 5
-        Padding.Top = 5
-        Padding.Right = 5
-        Padding.Bottom = 5
-        ParentBackground = False
-        TabOrder = 0
-        object BtnCadastro: TButton
-          Left = 5
-          Top = 5
-          Width = 111
-          Height = 27
-          Align = alClient
-          Caption = 'CADASTRAR'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'JetBrains Mono ExtraLight'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 0
-          OnClick = BtnCadastroClick
-        end
-      end
-      object Panel4: TPanel
-        Left = 273
-        Top = 10
-        Width = 122
-        Height = 37
-        Margins.Left = 40
-        Align = alLeft
-        BevelOuter = bvNone
-        Color = clGrayText
-        Padding.Left = 5
-        Padding.Top = 5
-        Padding.Right = 5
-        Padding.Bottom = 5
-        ParentBackground = False
-        TabOrder = 1
-        object Button2: TButton
-          Left = 5
-          Top = 5
-          Width = 112
-          Height = 27
-          Align = alClient
-          Caption = 'SELECIONAR'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'JetBrains Mono ExtraLight'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 0
-        end
-      end
-      object Panel5: TPanel
-        Left = 141
-        Top = 10
-        Width = 11
-        Height = 37
-        Align = alLeft
-        BevelOuter = bvNone
-        Color = clGrayText
-        Padding.Left = 5
-        Padding.Top = 10
-        Padding.Right = 5
-        Padding.Bottom = 10
-        ParentBackground = False
-        TabOrder = 2
-      end
-      object Panel6: TPanel
-        Left = 152
-        Top = 10
-        Width = 121
-        Height = 37
-        Align = alLeft
-        BevelOuter = bvNone
-        Color = clGrayText
-        Padding.Left = 5
-        Padding.Top = 5
-        Padding.Right = 5
-        Padding.Bottom = 5
-        ParentBackground = False
-        TabOrder = 3
-        object EditSelecao: TEdit
-          Left = 5
-          Top = 5
-          Width = 121
-          Height = 27
-          Align = alLeft
-          Alignment = taCenter
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'JetBrains Mono NL ExtraLight'
-          Font.Style = []
-          ParentFont = False
-          TabOrder = 0
-          ExplicitHeight = 25
-        end
+        ExplicitTop = 5
+        ExplicitHeight = 57
       end
     end
     object Panel7: TPanel
       Left = 0
-      Top = 592
-      Width = 784
+      Top = 631
+      Width = 800
       Height = 51
       Align = alBottom
       BevelOuter = bvNone
@@ -179,6 +75,8 @@ object FormularioPrincipal: TFormularioPrincipal
       Padding.Bottom = 5
       ParentBackground = False
       TabOrder = 1
+      ExplicitTop = 592
+      ExplicitWidth = 784
       object Image1: TImage
         Left = 5
         Top = 5
@@ -269,7 +167,7 @@ object FormularioPrincipal: TFormularioPrincipal
         ExplicitHeight = 44
       end
       object Panel8: TPanel
-        Left = 478
+        Left = 494
         Top = 5
         Width = 286
         Height = 41
@@ -299,29 +197,10 @@ object FormularioPrincipal: TFormularioPrincipal
         end
       end
     end
-    object DBGridViagem: TDBGrid
-      Left = 0
-      Top = 57
-      Width = 784
-      Height = 535
-      Align = alClient
-      DataSource = dsViagem
-      TabOrder = 2
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -12
-      TitleFont.Name = 'Segoe UI'
-      TitleFont.Style = []
-      OnDblClick = DBGridViagemDblClick
-    end
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 512
-    Top = 544
-  end
-  object dsViagem: TDataSource
-    Left = 480
-    Top = 543
+    Left = 576
+    Top = 640
   end
 end
