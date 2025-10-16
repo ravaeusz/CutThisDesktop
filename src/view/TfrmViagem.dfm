@@ -4,7 +4,7 @@ object FormularioViagem: TFormularioViagem
   BorderStyle = bsNone
   Caption = 'FormularioViagem'
   ClientHeight = 682
-  ClientWidth = 800
+  ClientWidth = 682
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,24 +14,108 @@ object FormularioViagem: TFormularioViagem
   Position = poScreenCenter
   OnCreate = FormCreate
   TextHeight = 15
+  object Label7: TLabel
+    Left = 13
+    Top = 134
+    Width = 63
+    Height = 17
+    Caption = 'CONTAS:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'JetBrains Mono NL ExtraLight'
+    Font.Style = []
+    ParentFont = False
+  end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 800
+    Width = 682
     Height = 682
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 400
-    ExplicitTop = 416
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    object LblViagemNome: TLabel
+      Left = 13
+      Top = 60
+      Width = 20
+      Height = 43
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -32
+      Font.Name = 'JetBrains Mono ExtraLight'
+      Font.Style = []
+      ParentFont = False
+    end
+    object LblDataInicio: TLabel
+      Left = 16
+      Top = 103
+      Width = 9
+      Height = 17
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'JetBrains Mono NL ExtraLight'
+      Font.Style = []
+      ParentFont = False
+    end
+    object LblDataFinal: TLabel
+      Left = 130
+      Top = 103
+      Width = 9
+      Height = 17
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'JetBrains Mono NL ExtraLight'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label6: TLabel
+      Left = 16
+      Top = 126
+      Width = 63
+      Height = 17
+      Caption = 'CONTAS:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'JetBrains Mono NL ExtraLight'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label8: TLabel
+      Left = 342
+      Top = 126
+      Width = 126
+      Height = 17
+      Caption = 'PARTICIPANTES:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'JetBrains Mono NL ExtraLight'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 114
+      Top = 103
+      Width = 9
+      Height = 17
+      Caption = '-'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'JetBrains Mono NL ExtraLight'
+      Font.Style = []
+      ParentFont = False
+    end
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 800
+      Width = 682
       Height = 57
       Align = alTop
       BevelOuter = bvNone
@@ -43,7 +127,7 @@ object FormularioViagem: TFormularioViagem
       ParentBackground = False
       TabOrder = 0
       object Label1: TLabel
-        Left = 661
+        Left = 481
         Top = 10
         Width = 119
         Height = 37
@@ -57,14 +141,34 @@ object FormularioViagem: TFormularioViagem
         Font.Style = []
         ParentColor = False
         ParentFont = False
-        ExplicitTop = 5
-        ExplicitHeight = 57
+        ExplicitHeight = 36
+      end
+      object Button1: TButton
+        Left = 620
+        Top = 10
+        Width = 42
+        Height = 37
+        Align = alRight
+        Caption = 'X'
+        TabOrder = 0
+        OnClick = Button1Click
+      end
+      object Panel9: TPanel
+        Left = 600
+        Top = 10
+        Width = 20
+        Height = 37
+        Align = alRight
+        BevelOuter = bvNone
+        Color = clGrayText
+        ParentBackground = False
+        TabOrder = 1
       end
     end
     object Panel7: TPanel
       Left = 0
       Top = 631
-      Width = 800
+      Width = 682
       Height = 51
       Align = alBottom
       BevelOuter = bvNone
@@ -75,8 +179,6 @@ object FormularioViagem: TFormularioViagem
       Padding.Bottom = 5
       ParentBackground = False
       TabOrder = 1
-      ExplicitTop = 592
-      ExplicitWidth = 784
       object Image1: TImage
         Left = 5
         Top = 5
@@ -167,7 +269,7 @@ object FormularioViagem: TFormularioViagem
         ExplicitHeight = 44
       end
       object Panel8: TPanel
-        Left = 494
+        Left = 376
         Top = 5
         Width = 286
         Height = 41
@@ -196,6 +298,70 @@ object FormularioViagem: TFormularioViagem
           ExplicitHeight = 27
         end
       end
+    end
+    object GridViagem: TDBGrid
+      Left = 16
+      Top = 149
+      Width = 320
+      Height = 457
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'JetBrains Mono ExtraBold'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
+    end
+    object GridParticipantes: TDBGrid
+      Left = 342
+      Top = 149
+      Width = 320
+      Height = 340
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'JetBrains Mono ExtraBold'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
+    end
+    object Button2: TButton
+      Left = 342
+      Top = 504
+      Width = 320
+      Height = 25
+      Caption = 'ACERTAR CONTAS'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'JetBrains Mono ExtraBold'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+    end
+    object Button3: TButton
+      Left = 342
+      Top = 581
+      Width = 320
+      Height = 25
+      Caption = 'CADASTRAR CONTA'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'JetBrains Mono ExtraBold'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
     end
   end
   object Timer1: TTimer

@@ -2,7 +2,7 @@ unit ViagemDAO;
 
 interface
 
-uses UConexão, UViagem, FireDAC.Comp.Client, System.Generics.Collections;
+uses UConexão, UViagem, FireDAC.Comp.Client, System.Generics.Collections, SysUtils;
 
 type
 TViagemDAO = class
@@ -11,6 +11,7 @@ public
   procedure deleteViagem(Id: integer);
   procedure updateViagem(AViagem : TViagem);
   function getViagem : TFDQuery;
+  function getOnlyViagem(AId : integer) : TViagem;
 end;
 
 implementation
@@ -34,6 +35,31 @@ finally
 end;
 
 end;
+
+function TViagemDAO.getOnlyViagem(AId : integer): TViagem;
+var
+Q : TFDQuery;
+begin
+Q := TFDQuery.Create(nil);
+
+try
+Q.Connection := TConexao.getConexao;
+Q.SQL.Text := 'SELECT VI_NOME,VI_DESC,VI_DATAINICIO,VI_DATAFINAL FROM VIAGEM where vi_id = :id';
+Q.ParamByName('id').AsInteger := AId;
+Q.Open;
+
+
+Result := TViagem.Create;
+Result.Nome :=  Q.FieldByName('VI_NOME').AsString;
+Result.Descricao :=  Q.FieldByName('VI_DESC').AsString;
+Result.dataInicio :=  Q.FieldByName('VI_DATAINICIO').AsDateTime;
+Result.dataFinal :=  Q.FieldByName('VI_DATAFINAL').AsDateTime;
+
+finally
+  q.Free;
+end;
+end;
+
 
 function TViagemDAO.getViagem: TFDQuery;
 var

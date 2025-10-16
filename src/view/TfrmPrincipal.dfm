@@ -4,7 +4,7 @@ object FormularioPrincipal: TFormularioPrincipal
   BorderStyle = bsNone
   Caption = 'FormularioPrincipal'
   ClientHeight = 643
-  ClientWidth = 784
+  ClientWidth = 682
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,17 +17,18 @@ object FormularioPrincipal: TFormularioPrincipal
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 784
+    Width = 682
     Height = 643
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 784
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 784
+      Width = 682
       Height = 57
       Align = alTop
       BevelOuter = bvNone
@@ -38,9 +39,9 @@ object FormularioPrincipal: TFormularioPrincipal
       Padding.Bottom = 10
       ParentBackground = False
       TabOrder = 0
-      ExplicitTop = -6
+      ExplicitWidth = 784
       object Label1: TLabel
-        Left = 645
+        Left = 481
         Top = 10
         Width = 119
         Height = 37
@@ -54,7 +55,8 @@ object FormularioPrincipal: TFormularioPrincipal
         Font.Style = []
         ParentColor = False
         ParentFont = False
-        ExplicitHeight = 36
+        ExplicitLeft = 479
+        ExplicitTop = 14
       end
       object Panel3: TPanel
         Left = 20
@@ -102,6 +104,7 @@ object FormularioPrincipal: TFormularioPrincipal
         Padding.Bottom = 5
         ParentBackground = False
         TabOrder = 1
+        ExplicitLeft = 272
         object Button2: TButton
           Left = 5
           Top = 5
@@ -164,11 +167,34 @@ object FormularioPrincipal: TFormularioPrincipal
           ExplicitHeight = 25
         end
       end
+      object Button1: TButton
+        Left = 620
+        Top = 10
+        Width = 42
+        Height = 37
+        Align = alRight
+        Caption = 'X'
+        TabOrder = 4
+        OnClick = Button1Click
+        ExplicitLeft = 640
+        ExplicitTop = 14
+      end
+      object Panel9: TPanel
+        Left = 600
+        Top = 10
+        Width = 20
+        Height = 37
+        Align = alRight
+        BevelOuter = bvNone
+        Color = clGrayText
+        ParentBackground = False
+        TabOrder = 5
+      end
     end
     object Panel7: TPanel
       Left = 0
       Top = 592
-      Width = 784
+      Width = 682
       Height = 51
       Align = alBottom
       BevelOuter = bvNone
@@ -179,6 +205,7 @@ object FormularioPrincipal: TFormularioPrincipal
       Padding.Bottom = 5
       ParentBackground = False
       TabOrder = 1
+      ExplicitWidth = 784
       object Image1: TImage
         Left = 5
         Top = 5
@@ -269,7 +296,7 @@ object FormularioPrincipal: TFormularioPrincipal
         ExplicitHeight = 44
       end
       object Panel8: TPanel
-        Left = 478
+        Left = 376
         Top = 5
         Width = 286
         Height = 41
@@ -282,6 +309,7 @@ object FormularioPrincipal: TFormularioPrincipal
         Padding.Bottom = 5
         ParentBackground = False
         TabOrder = 0
+        ExplicitLeft = 478
         object Label2: TLabel
           Left = 5
           Top = 5
@@ -302,10 +330,16 @@ object FormularioPrincipal: TFormularioPrincipal
     object DBGridViagem: TDBGrid
       Left = 0
       Top = 57
-      Width = 784
+      Width = 682
       Height = 535
       Align = alClient
       DataSource = dsViagem
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'JetBrains Mono ExtraBold'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

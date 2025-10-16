@@ -26,10 +26,13 @@ type
     Image1: TImage;
     dsViagem: TDataSource;
     DBGridViagem: TDBGrid;
+    Button1: TButton;
+    Panel9: TPanel;
     procedure FormShow(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BtnCadastroClick(Sender: TObject);
     procedure DBGridViagemDblClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
 
   private
     Ffuser: string;
@@ -48,6 +51,11 @@ implementation
 uses TfrmLogin, TfrmCadastroViagem , UGridDAO , UGridController, ViagemDAO,
   TfrmViagem;
 
+
+procedure TFormularioPrincipal.Button1Click(Sender: TObject);
+begin
+Application.Terminate;
+end;
 
 procedure TFormularioPrincipal.DBGridViagemDblClick(Sender: TObject);
 var
@@ -86,8 +94,7 @@ try
     case dlg.ShowModal of
     mrYes:
     begin
-
-    formViagem.ShowModal;
+    grid.getViagem(dsViagem.DataSet.FieldByName('VI_ID').AsInteger);
     end;
 
     mrNo:

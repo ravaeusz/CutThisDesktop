@@ -11,6 +11,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poMainFormCenter
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -102,6 +103,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       Height = 23
       CharCase = ecUpperCase
       TabOrder = 0
+      OnKeyPress = EditNomeViagemKeyPress
     end
     object EditDescViagem: TEdit
       Left = 40
@@ -110,15 +112,17 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       Height = 23
       CharCase = ecUpperCase
       TabOrder = 1
+      OnKeyPress = EditDescViagemKeyPress
     end
-    object a: TButton
+    object BtnCadastro: TButton
       Left = 40
       Top = 333
       Width = 233
       Height = 41
       Caption = 'Cadastrar'
       TabOrder = 2
-      OnClick = aClick
+      OnClick = BtnCadastroClick
+      OnKeyPress = BtnCadastroKeyPress
     end
     object MaskEditDataInicio: TMaskEdit
       Left = 40
@@ -135,6 +139,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       ParentFont = False
       TabOrder = 3
       Text = '  /  /    '
+      OnKeyPress = MaskEditDataInicioKeyPress
     end
     object MaskEditDataFinal: TMaskEdit
       Left = 40
@@ -151,6 +156,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       ParentFont = False
       TabOrder = 4
       Text = '  /  /    '
+      OnKeyPress = MaskEditDataFinalKeyPress
     end
   end
 end

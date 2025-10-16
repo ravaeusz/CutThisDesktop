@@ -14,12 +14,19 @@ type
     Label1: TLabel;
     EditDescViagem: TEdit;
     Label2: TLabel;
-    a: TButton;
+    BtnCadastro: TButton;
     Label3: TLabel;
     Label4: TLabel;
     MaskEditDataInicio: TMaskEdit;
     MaskEditDataFinal: TMaskEdit;
-    procedure aClick(Sender: TObject);
+    procedure BtnCadastroClick(Sender: TObject);
+
+    procedure EditNomeViagemKeyPress(Sender: TObject; var Key: Char);
+    procedure EditDescViagemKeyPress(Sender: TObject; var Key: Char);
+    procedure MaskEditDataInicioKeyPress(Sender: TObject; var Key: Char);
+    procedure MaskEditDataFinalKeyPress(Sender: TObject; var Key: Char);
+    procedure BtnCadastroKeyPress(Sender: TObject; var Key: Char);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,7 +42,7 @@ implementation
 
 uses uUserController, UViagem, UViagemController, UGridDAO, TfrmPrincipal;
 
-procedure TFormularioCadastroViagem.aClick(Sender: TObject);
+procedure TFormularioCadastroViagem.BtnCadastroClick(Sender: TObject);
 var
 Controller : TViagemControler;
 Model : TViagem;
@@ -56,6 +63,46 @@ ShowMessage(resultado);
 FormularioPrincipal.dsViagem.DataSet.Refresh;
 close;
 
+end;
+
+procedure TFormularioCadastroViagem.BtnCadastroKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+BtnCadastro.Click;
+end;
+
+procedure TFormularioCadastroViagem.EditDescViagemKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if key = char(#13) then
+MaskEditDataInicio.SetFocus;
+end;
+
+procedure TFormularioCadastroViagem.EditNomeViagemKeyPress(Sender: TObject;
+var Key: Char);
+begin
+if key = char(#13) then
+EditDescViagem.SetFocus;
+end;
+
+
+procedure TFormularioCadastroViagem.FormShow(Sender: TObject);
+begin
+EditNomeViagem.SetFocus;
+end;
+
+procedure TFormularioCadastroViagem.MaskEditDataFinalKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if key = char(#13) then
+BtnCadastro.SetFocus;
+end;
+
+procedure TFormularioCadastroViagem.MaskEditDataInicioKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if key = char(#13) then
+MaskEditDataFinal.SetFocus;
 end;
 
 end.
