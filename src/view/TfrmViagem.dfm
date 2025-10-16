@@ -1,10 +1,10 @@
 object FormularioViagem: TFormularioViagem
   Left = 477
   Top = 156
-  BorderStyle = bsNone
+  BorderStyle = bsDialog
   Caption = 'FormularioViagem'
-  ClientHeight = 682
-  ClientWidth = 682
+  ClientHeight = 643
+  ClientWidth = 666
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -30,13 +30,15 @@ object FormularioViagem: TFormularioViagem
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 682
-    Height = 682
+    Width = 666
+    Height = 643
     Align = alClient
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 682
+    ExplicitHeight = 682
     object LblViagemNome: TLabel
       Left = 13
       Top = 60
@@ -115,7 +117,7 @@ object FormularioViagem: TFormularioViagem
     object Panel2: TPanel
       Left = 0
       Top = 0
-      Width = 682
+      Width = 666
       Height = 57
       Align = alTop
       BevelOuter = bvNone
@@ -126,8 +128,9 @@ object FormularioViagem: TFormularioViagem
       Padding.Bottom = 10
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 682
       object Label1: TLabel
-        Left = 481
+        Left = 527
         Top = 10
         Width = 119
         Height = 37
@@ -141,34 +144,14 @@ object FormularioViagem: TFormularioViagem
         Font.Style = []
         ParentColor = False
         ParentFont = False
+        ExplicitLeft = 481
         ExplicitHeight = 36
-      end
-      object Button1: TButton
-        Left = 620
-        Top = 10
-        Width = 42
-        Height = 37
-        Align = alRight
-        Caption = 'X'
-        TabOrder = 0
-        OnClick = Button1Click
-      end
-      object Panel9: TPanel
-        Left = 600
-        Top = 10
-        Width = 20
-        Height = 37
-        Align = alRight
-        BevelOuter = bvNone
-        Color = clGrayText
-        ParentBackground = False
-        TabOrder = 1
       end
     end
     object Panel7: TPanel
       Left = 0
-      Top = 631
-      Width = 682
+      Top = 592
+      Width = 666
       Height = 51
       Align = alBottom
       BevelOuter = bvNone
@@ -179,6 +162,8 @@ object FormularioViagem: TFormularioViagem
       Padding.Bottom = 5
       ParentBackground = False
       TabOrder = 1
+      ExplicitLeft = -4
+      ExplicitTop = 566
       object Image1: TImage
         Left = 5
         Top = 5
@@ -269,7 +254,7 @@ object FormularioViagem: TFormularioViagem
         ExplicitHeight = 44
       end
       object Panel8: TPanel
-        Left = 376
+        Left = 360
         Top = 5
         Width = 286
         Height = 41
@@ -282,6 +267,7 @@ object FormularioViagem: TFormularioViagem
         Padding.Bottom = 5
         ParentBackground = False
         TabOrder = 0
+        ExplicitLeft = 376
         object Label2: TLabel
           Left = 5
           Top = 5
@@ -294,8 +280,8 @@ object FormularioViagem: TFormularioViagem
           Font.Name = 'JetBrains Mono ExtraLight'
           Font.Style = []
           ParentFont = False
-          ExplicitWidth = 14
-          ExplicitHeight = 27
+          ExplicitLeft = -3
+          ExplicitTop = -11
         end
       end
     end
@@ -303,7 +289,8 @@ object FormularioViagem: TFormularioViagem
       Left = 16
       Top = 149
       Width = 320
-      Height = 457
+      Height = 411
+      BorderStyle = bsNone
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -322,6 +309,7 @@ object FormularioViagem: TFormularioViagem
       Top = 149
       Width = 320
       Height = 340
+      BorderStyle = bsNone
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -335,7 +323,7 @@ object FormularioViagem: TFormularioViagem
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
     end
-    object Button2: TButton
+    object BtnAcertoConta: TButton
       Left = 342
       Top = 504
       Width = 320
@@ -349,11 +337,11 @@ object FormularioViagem: TFormularioViagem
       ParentFont = False
       TabOrder = 4
     end
-    object Button3: TButton
-      Left = 342
-      Top = 581
-      Width = 320
-      Height = 25
+    object BtnCadastroConta: TButton
+      Left = 16
+      Top = 14
+      Width = 134
+      Height = 29
       Caption = 'CADASTRAR CONTA'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -362,6 +350,20 @@ object FormularioViagem: TFormularioViagem
       Font.Style = []
       ParentFont = False
       TabOrder = 5
+    end
+    object BtnCadastroParticipante: TButton
+      Left = 168
+      Top = 14
+      Width = 168
+      Height = 29
+      Caption = 'CADASTRAR PARTICIPANTE'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'JetBrains Mono ExtraBold'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
     end
   end
   object Timer1: TTimer

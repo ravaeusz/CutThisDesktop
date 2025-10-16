@@ -26,10 +26,9 @@ type
     Label8: TLabel;
     GridParticipantes: TDBGrid;
     Label3: TLabel;
-    Button1: TButton;
-    Panel9: TPanel;
-    Button2: TButton;
-    Button3: TButton;
+    BtnAcertoConta: TButton;
+    BtnCadastroConta: TButton;
+    BtnCadastroParticipante: TButton;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);

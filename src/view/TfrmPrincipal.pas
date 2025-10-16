@@ -26,8 +26,6 @@ type
     Image1: TImage;
     dsViagem: TDataSource;
     DBGridViagem: TDBGrid;
-    Button1: TButton;
-    Panel9: TPanel;
     procedure FormShow(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BtnCadastroClick(Sender: TObject);

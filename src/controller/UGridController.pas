@@ -84,7 +84,7 @@ col.Width := 100;
 col := FormPrincipal.DBGridViagem.Columns.Add;
 col.FieldName := 'VI_DESC';
 col.Title.Caption := 'DESCRICAO';
-col.Width := 348;
+col.Width := 340;
 
 col := FormPrincipal.DBGridViagem.Columns.Add;
 col.FieldName := 'VI_DATAINICIO';
