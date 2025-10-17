@@ -22,16 +22,20 @@ type
     Image1: TImage;
     Panel8: TPanel;
     Label2: TLabel;
-    GridViagem: TDBGrid;
+    GridConta: TDBGrid;
     Label8: TLabel;
     GridParticipantes: TDBGrid;
     Label3: TLabel;
     BtnAcertoConta: TButton;
     BtnCadastroConta: TButton;
     BtnCadastroParticipante: TButton;
+    dsConta: TDataSource;
+    dsParticipantes: TDataSource;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+
   private
     FUser : string;
   public
@@ -45,7 +49,7 @@ implementation
 
 {$R *.dfm}
 
-uses TfrmPrincipal;
+uses TfrmPrincipal, UGridController, UGridControllerViagem;
 
 
 
@@ -60,6 +64,16 @@ Label1.Caption := FormularioPrincipal.Label1.Caption;
 end;
 
 
+procedure TFormularioViagem.FormShow(Sender: TObject);
+var
+grid : TGridControllerViagem;
+begin
+grid := TGridControllerViagem.Create(Self);
+
+grid.madeGridConta;
+grid.madeGridParticipantes;
+
+end;
 
 procedure TFormularioViagem.Timer1Timer(Sender: TObject);
 begin

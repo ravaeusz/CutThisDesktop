@@ -151,6 +151,8 @@
         </DCCReference>
         <DCCReference Include="src\model\UConta.pas"/>
         <DCCReference Include="src\model\UParticipante.pas"/>
+        <DCCReference Include="src\dao\ContaDAO.pas"/>
+        <DCCReference Include="src\controller\UGridControllerViagem.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

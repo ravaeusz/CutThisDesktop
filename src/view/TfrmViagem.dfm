@@ -13,6 +13,7 @@ object FormularioViagem: TFormularioViagem
   Font.Style = []
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object Label7: TLabel
     Left = 13
@@ -37,8 +38,6 @@ object FormularioViagem: TFormularioViagem
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 682
-    ExplicitHeight = 682
     object LblViagemNome: TLabel
       Left = 13
       Top = 60
@@ -128,7 +127,6 @@ object FormularioViagem: TFormularioViagem
       Padding.Bottom = 10
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 682
       object Label1: TLabel
         Left = 527
         Top = 10
@@ -144,7 +142,6 @@ object FormularioViagem: TFormularioViagem
         Font.Style = []
         ParentColor = False
         ParentFont = False
-        ExplicitLeft = 481
         ExplicitHeight = 36
       end
     end
@@ -162,8 +159,6 @@ object FormularioViagem: TFormularioViagem
       Padding.Bottom = 5
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = -4
-      ExplicitTop = 566
       object Image1: TImage
         Left = 5
         Top = 5
@@ -267,7 +262,6 @@ object FormularioViagem: TFormularioViagem
         Padding.Bottom = 5
         ParentBackground = False
         TabOrder = 0
-        ExplicitLeft = 376
         object Label2: TLabel
           Left = 5
           Top = 5
@@ -280,17 +274,18 @@ object FormularioViagem: TFormularioViagem
           Font.Name = 'JetBrains Mono ExtraLight'
           Font.Style = []
           ParentFont = False
-          ExplicitLeft = -3
-          ExplicitTop = -11
+          ExplicitWidth = 14
+          ExplicitHeight = 27
         end
       end
     end
-    object GridViagem: TDBGrid
+    object GridConta: TDBGrid
       Left = 16
       Top = 149
       Width = 320
       Height = 411
       BorderStyle = bsNone
+      DataSource = dsConta
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -310,6 +305,7 @@ object FormularioViagem: TFormularioViagem
       Width = 320
       Height = 340
       BorderStyle = bsNone
+      DataSource = dsParticipantes
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -12
@@ -338,7 +334,7 @@ object FormularioViagem: TFormularioViagem
       TabOrder = 4
     end
     object BtnCadastroConta: TButton
-      Left = 16
+      Left = 13
       Top = 14
       Width = 134
       Height = 29
@@ -370,5 +366,13 @@ object FormularioViagem: TFormularioViagem
     OnTimer = Timer1Timer
     Left = 576
     Top = 640
+  end
+  object dsConta: TDataSource
+    Left = 304
+    Top = 600
+  end
+  object dsParticipantes: TDataSource
+    Left = 344
+    Top = 600
   end
 end

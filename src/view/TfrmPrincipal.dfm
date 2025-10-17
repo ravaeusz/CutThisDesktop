@@ -24,8 +24,6 @@ object FormularioPrincipal: TFormularioPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 682
-    ExplicitHeight = 643
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -40,7 +38,6 @@ object FormularioPrincipal: TFormularioPrincipal
       Padding.Bottom = 10
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 682
       object Label1: TLabel
         Left = 527
         Top = 10
@@ -56,7 +53,6 @@ object FormularioPrincipal: TFormularioPrincipal
         Font.Style = []
         ParentColor = False
         ParentFont = False
-        ExplicitLeft = 481
         ExplicitHeight = 36
       end
       object Panel3: TPanel
@@ -182,8 +178,6 @@ object FormularioPrincipal: TFormularioPrincipal
       Padding.Bottom = 5
       ParentBackground = False
       TabOrder = 1
-      ExplicitTop = 592
-      ExplicitWidth = 682
       object Image1: TImage
         Left = 5
         Top = 5
@@ -287,7 +281,6 @@ object FormularioPrincipal: TFormularioPrincipal
         Padding.Bottom = 5
         ParentBackground = False
         TabOrder = 0
-        ExplicitLeft = 376
         object Label2: TLabel
           Left = 5
           Top = 5

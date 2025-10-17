@@ -18,7 +18,9 @@ uses
   UGridController in 'src\controller\UGridController.pas',
   TfrmViagem in 'src\view\TfrmViagem.pas' {FormularioViagem},
   UConta in 'src\model\UConta.pas',
-  UParticipante in 'src\model\UParticipante.pas';
+  UParticipante in 'src\model\UParticipante.pas',
+  ContaDAO in 'src\dao\ContaDAO.pas',
+  UGridControllerViagem in 'src\controller\UGridControllerViagem.pas';
 
 {$R *.res}
 
