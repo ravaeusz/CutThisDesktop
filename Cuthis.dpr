@@ -16,7 +16,9 @@ uses
   UViagemController in 'src\controller\UViagemController.pas',
   UGridDAO in 'src\dao\UGridDAO.pas',
   UGridController in 'src\controller\UGridController.pas',
-  TfrmViagem in 'src\view\TfrmViagem.pas' {FormularioViagem};
+  TfrmViagem in 'src\view\TfrmViagem.pas' {FormularioViagem},
+  UConta in 'src\model\UConta.pas',
+  UParticipante in 'src\model\UParticipante.pas';
 
 {$R *.res}
 

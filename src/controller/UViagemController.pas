@@ -11,7 +11,7 @@ type
   FDAO : TViagemDAO ;
   constructor Create;
   destructor Destroy; override;
-function postViagem(AViagem : TViagem) : string ;
+  function postViagem(AViagem : TViagem) : string ;
 
 end;
 

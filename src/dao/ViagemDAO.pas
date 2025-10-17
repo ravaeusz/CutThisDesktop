@@ -9,7 +9,7 @@ TViagemDAO = class
 public
   procedure postLogin(AViagem : TViagem);
   procedure deleteViagem(Id: integer);
-  procedure updateViagem(AViagem : TViagem);
+  procedure updateViagem(AViagem : TViagem ; AId : integer);
   function getViagem : TFDQuery;
   function getOnlyViagem(AId : integer) : TViagem;
 end;
@@ -105,7 +105,7 @@ end;
 
 end;
 
-procedure TViagemDAO.updateViagem(AViagem: TViagem);
+procedure TViagemDAO.updateViagem(AViagem: TViagem ; AId : integer);
 var
 Q : TFDQuery;
 begin
@@ -119,6 +119,7 @@ Q.ParamByName('NOME').AsString := AViagem.Nome;
 Q.ParamByName('DESC').AsString := AViagem.Descricao;
 Q.ParamByName('DATAINICIO').AsDate := AViagem.dataInicio;
 Q.ParamByName('DATAFINAL').AsDate := AViagem.dataFinal;
+Q.ParamByName('ID').AsInteger := AId;
 Q.ExecSQL;
 
 finally

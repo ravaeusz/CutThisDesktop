@@ -35,10 +35,7 @@ implementation
 { TGridConn }
 
 function TGridDAO.conn: TFDQuery;
-
 begin
-
-
 FQuery.SQL.Text := 'SELECT * FROM VIAGEM' ;
 FQuery.Active := true;
 FQuery.Open;
