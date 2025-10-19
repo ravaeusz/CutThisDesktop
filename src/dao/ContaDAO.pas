@@ -29,11 +29,11 @@ q := TFDQuery.Create(nil);
 try
 q.Connection := TConexao.getConexao;
 q.SQL.Text := 'INSERT INTO CONTA (CT_DESC, CT_PRECO, CT_USER, CT_VIAGEM)' +
-'VALUES (:desc, :preco, :user, :viagem)';
-q.FieldByName('desc').AsString := AConta.Descricao;
-q.FieldByName('preco').AsCurrency := AConta.Preco;
-q.FieldByName('user').AsInteger := AConta.CreateByUser;
-q.FieldByName('viagem').AsInteger :=AConta.OfViagem;
+'VALUES (:desc, :preco, :Puser, :viagem)';
+q.ParamByName('desc').AsString := AConta.Descricao;
+q.ParamByName('preco').AsCurrency := AConta.Preco;
+q.ParamByName('Puser').AsInteger := AConta.CreateByUser;
+q.ParamByName('viagem').AsInteger :=AConta.OfViagem;
 q.ExecSQL;
 
 finally

@@ -35,6 +35,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BtnCadastroContaClick(Sender: TObject);
 
   private
     FUser : string;
@@ -49,9 +50,23 @@ implementation
 
 {$R *.dfm}
 
-uses TfrmPrincipal, UGridController, UGridControllerViagem;
+uses TfrmPrincipal, UGridController, UGridControllerViagem, TfrmCadastroConta ;
 
 
+
+procedure TFormularioViagem.BtnCadastroContaClick(Sender: TObject);
+var
+cadastro : TFormularioCadastroConta;
+begin
+cadastro := TFormularioCadastroConta.Create(nil);
+
+try
+cadastro.ShowModal;
+
+finally
+cadastro.free;
+end;
+end;
 
 procedure TFormularioViagem.Button1Click(Sender: TObject);
 begin

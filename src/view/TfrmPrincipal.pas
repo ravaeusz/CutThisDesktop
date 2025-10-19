@@ -32,6 +32,7 @@ type
     procedure DBGridViagemDblClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
 
+
   private
     Ffuser: string;
     public
@@ -111,6 +112,7 @@ finally
 end;
 
 end;
+
 
 
 procedure TFormularioPrincipal.FormShow(Sender: TObject);

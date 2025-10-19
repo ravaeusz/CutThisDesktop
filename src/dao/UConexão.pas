@@ -40,9 +40,7 @@ FConexao.DriverName := 'FB';
 
 FConexao.Params.Values['Database'] := 'C:\Sistema\CutThis\src\dados\CUTHIS.FDB';
 FConexao.Params.Values['User_Name'] := 'SYSDBA';
-FConexao.Params.Values['Password'] := 'masterkey';
-FConexao.Params.Values['Server'] := 'localhost';
-FConexao.Params.Values['Protocol'] := 'local';
+FConexao.Params.Values['Password'] := 'Office25';
 FConexao.LoginPrompt := False;
 
 FConexao.Connected := True;

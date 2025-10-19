@@ -1,8 +1,8 @@
-object FormularioCadastroViagem: TFormularioCadastroViagem
-  Left = 698
-  Top = 190
+object FormularioCadastroConta: TFormularioCadastroConta
+  Left = 694
+  Top = 187
   BorderStyle = bsDialog
-  Caption = 'FormularioCadastroViagem'
+  Caption = 'FormularioCadastroConta'
   ClientHeight = 394
   ClientWidth = 312
   Color = clBtnFace
@@ -11,8 +11,7 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poMainFormCenter
-  OnShow = FormShow
+  Position = poDesigned
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -32,22 +31,22 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       Height = 21
       Align = alTop
       Alignment = taCenter
-      Caption = 'CADASTRE ROL'#202' OU VIAGEM'
+      Caption = 'CADASTRE A CONTA'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'JetBrains Mono ExtraBold'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 230
+      ExplicitWidth = 160
     end
     object Label1: TLabel
       Left = 20
       Top = 61
-      Width = 70
+      Width = 140
       Height = 21
       Alignment = taCenter
-      Caption = '* Nome:'
+      Caption = '* Descri'#231#227'o : '
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -58,10 +57,10 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
     object Label2: TLabel
       Left = 20
       Top = 125
-      Width = 130
+      Width = 90
       Height = 21
       Alignment = taCenter
-      Caption = '* Descri'#231#227'o :'
+      Caption = '* Pre'#231'o :'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -70,12 +69,12 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 40
-      Top = 189
-      Width = 120
+      Left = 20
+      Top = 197
+      Width = 210
       Height = 21
       Alignment = taCenter
-      Caption = 'Data Inicio:'
+      Caption = '* Quem fez a conta  :'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -83,37 +82,29 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       Font.Style = []
       ParentFont = False
     end
-    object Label4: TLabel
-      Left = 40
-      Top = 253
-      Width = 110
-      Height = 21
-      Alignment = taCenter
-      Caption = 'Data Final:'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'JetBrains Mono ExtraBold'
-      Font.Style = []
-      ParentFont = False
-    end
-    object EditNomeViagem: TEdit
+    object EditDescConta: TEdit
       Left = 40
       Top = 88
       Width = 233
       Height = 23
       CharCase = ecUpperCase
       TabOrder = 0
-      OnKeyPress = EditNomeViagemKeyPress
     end
-    object EditDescViagem: TEdit
+    object EditPrecoConta: TEdit
       Left = 40
       Top = 152
       Width = 233
       Height = 23
       CharCase = ecUpperCase
       TabOrder = 1
-      OnKeyPress = EditDescViagemKeyPress
+    end
+    object EditParticipante: TEdit
+      Left = 40
+      Top = 224
+      Width = 233
+      Height = 23
+      CharCase = ecUpperCase
+      TabOrder = 2
     end
     object BtnCadastro: TButton
       Left = 40
@@ -121,43 +112,8 @@ object FormularioCadastroViagem: TFormularioCadastroViagem
       Width = 233
       Height = 41
       Caption = 'Cadastrar'
-      TabOrder = 2
-      OnClick = BtnCadastroClick
-      OnKeyPress = BtnCadastroKeyPress
-    end
-    object MaskEditDataInicio: TMaskEdit
-      Left = 40
-      Top = 216
-      Width = 233
-      Height = 29
-      EditMask = '!99/99/0000;1;_'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      MaxLength = 10
-      ParentFont = False
       TabOrder = 3
-      Text = '  /  /    '
-      OnKeyPress = MaskEditDataInicioKeyPress
-    end
-    object MaskEditDataFinal: TMaskEdit
-      Left = 40
-      Top = 280
-      Width = 233
-      Height = 29
-      EditMask = '!99/99/0000;1;_'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      MaxLength = 10
-      ParentFont = False
-      TabOrder = 4
-      Text = '  /  /    '
-      OnKeyPress = MaskEditDataFinalKeyPress
+      OnClick = BtnCadastroClick
     end
   end
 end

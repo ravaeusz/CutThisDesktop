@@ -20,7 +20,9 @@ uses
   UConta in 'src\model\UConta.pas',
   UParticipante in 'src\model\UParticipante.pas',
   ContaDAO in 'src\dao\ContaDAO.pas',
-  UGridControllerViagem in 'src\controller\UGridControllerViagem.pas';
+  UGridControllerViagem in 'src\controller\UGridControllerViagem.pas',
+  TfrmCadastroConta in 'src\view\TfrmCadastroConta.pas' {FormularioCadastroConta},
+  UContaController in 'src\controller\UContaController.pas';
 
 {$R *.res}
 
@@ -31,5 +33,6 @@ begin
   Application.CreateForm(TFormularioPrincipal, FormularioPrincipal);
   Application.CreateForm(TFormularioLogin, FormularioLogin);
   Application.CreateForm(TFormularioViagem, FormularioViagem);
+  Application.CreateForm(TFormularioCadastroConta, FormularioCadastroConta);
   Application.Run;
 end.
