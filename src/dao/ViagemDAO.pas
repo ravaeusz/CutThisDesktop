@@ -12,6 +12,7 @@ public
   procedure updateViagem(AViagem : TViagem ; AId : integer);
   function getViagem : TFDQuery;
   function getOnlyViagem(AId : integer) : TViagem;
+  function retornaIdViagem(AViagem : string) : integer;
 end;
 
 implementation
@@ -103,6 +104,28 @@ finally
 Q.Free;
 end;
 
+end;
+
+function TViagemDAO.retornaIdViagem(AViagem: string): integer;
+var
+Q : TFDQuery;
+begin
+Result := -1;
+Q := TFDQuery.Create(nil);
+
+try
+Q.Connection := TConexao.getConexao;
+Q.SQL.Text := 'SELECT * FROM VIAGEM where vi_nome = :viagem';
+Q.ParamByName('viagem').AsString := AViagem;
+Q.Open;
+
+Result:= q.FieldByName('VI_ID').AsInteger;
+
+
+finally
+Q.Free;
+
+end;
 end;
 
 procedure TViagemDAO.updateViagem(AViagem: TViagem ; AId : integer);

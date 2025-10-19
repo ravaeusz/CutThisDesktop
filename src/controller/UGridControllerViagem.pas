@@ -8,11 +8,13 @@ type
 TGridControllerViagem = class
 private
   FormViagem : TFormularioViagem;
+  FIdViagem : integer;
 public
 constructor Create(Aform : TFormularioViagem);
 destructor Destroy; override;
 procedure madeGridConta;
 procedure madeGridParticipantes;
+function getViagemId(AViagem: string): integer;
 end;
 implementation
 
@@ -25,7 +27,19 @@ end;
 
 destructor TGridControllerViagem.Destroy;
 begin
-FormViagem.Free;
+inherited
+end;
+
+function TGridControllerViagem.getViagemId(AViagem: string) : integer ;
+var
+viagem : tViagemDAO;
+resultado : integer;
+begin
+viagem := tViagemDAO.Create;
+
+resultado := viagem.retornaIdViagem(AViagem);
+FIdViagem := resultado;
+Result := resultado
 end;
 
 procedure TGridControllerViagem.madeGridConta;
@@ -54,7 +68,7 @@ col.Title.Caption := 'VALOR';
 col.Width := 70;
 
 
-FormViagem.dsConta.DataSet := gridConn.connConta;
+FormViagem.dsConta.DataSet := gridConn.connConta(FIdViagem);
 
 end;
 
@@ -80,7 +94,7 @@ col.Width := 200
 ;
 
 
-FormViagem.dsParticipantes.DataSet := gridConn.connParticipantes;
+FormViagem.dsParticipantes.DataSet := gridConn.connParticipantes(FIdViagem);
 
 end;
 

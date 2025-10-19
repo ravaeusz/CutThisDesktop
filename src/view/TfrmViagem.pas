@@ -38,9 +38,9 @@ type
     procedure BtnCadastroContaClick(Sender: TObject);
 
   private
-    FUser : string;
+
   public
-    { Public declarations }
+    FIdViagem : integer;
   end;
 
 var
@@ -61,7 +61,9 @@ begin
 cadastro := TFormularioCadastroConta.Create(nil);
 
 try
+cadastro.getViagem(FIdViagem);
 cadastro.ShowModal;
+dsConta.DataSet.Refresh;
 
 finally
 cadastro.free;
@@ -85,6 +87,7 @@ grid : TGridControllerViagem;
 begin
 grid := TGridControllerViagem.Create(Self);
 
+FIdViagem := grid.getViagemId(LblViagemNome.Caption);
 grid.madeGridConta;
 grid.madeGridParticipantes;
 

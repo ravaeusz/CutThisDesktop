@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.CheckLst;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.CheckLst,
+  Vcl.Mask;
 
 type
   TFormularioCadastroConta = class(TForm)
@@ -13,10 +14,10 @@ type
     Label1: TLabel;
     Label2: TLabel;
     EditDescConta: TEdit;
-    EditPrecoConta: TEdit;
     Label3: TLabel;
     EditParticipante: TEdit;
     BtnCadastro: TButton;
+    EditPrecoConta: TEdit;
     procedure BtnCadastroClick(Sender: TObject);
   private
     FViagem: integer;
@@ -50,13 +51,13 @@ model := TConta.Create;
 model.Descricao := EditDescConta.Text;
 model.Preco := StrToCurr(EditPrecoConta.Text);
 model.CreateByUser := StrToInt(EditParticipante.text);
-model.OfViagem := 2;
+model.OfViagem := Viagem;
 
 try
 resultado := Controller.createConta(model);
 ShowMessage(resultado);
-if Assigned(FormularioViagem) then
-FormularioViagem.dsConta.DataSet.Refresh;
+
+if Assigned(Controller) then
 
 close;
 finally
@@ -67,7 +68,7 @@ end;
 
 procedure TFormularioCadastroConta.getViagem(AId : integer);
 begin
-Viagem := AId;
+Self.FViagem := AId;
 end;
 
 end.

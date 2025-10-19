@@ -27,25 +27,30 @@ public
     constructor Create;
     destructor Destroy; override;
   function connViagem : TFDQuery;
-  function connConta : TFDQuery;
-  function connParticipantes : TFDQuery;
+  function connConta(AId : integer) : TFDQuery;
+  function connParticipantes(AId : integer) : TFDQuery;
   procedure refresh;
 end;
 
 implementation
 
-function TGridDAO.connConta: TFDQuery;
+function TGridDAO.connConta(AId : integer): TFDQuery;
 begin
-FQuery.SQL.Text := 'SELECT * FROM CONTA' ;
+FQuery.sql.clear;
+FQuery.SQL.Text := 'SELECT * FROM CONTA where ct_viagem = :viagem' ;
+FQUery.ParamByName('viagem').AsInteger := AId;
 FQuery.Active := true;
 FQuery.Open;
+
 
 Result := FQuery;
 end;
 
-function TGridDAO.connParticipantes: TFDQuery;
+function TGridDAO.connParticipantes(AId : integer): TFDQuery;
 begin
-FQuery.SQL.Text := 'SELECT * FROM PARTICIPANTES' ;
+FQuery.sql.clear;
+FQuery.SQL.Text := 'SELECT * FROM PARTICIPANTES where pt_viagem = :viagem' ;
+FQUery.ParamByName('viagem').AsInteger := AId;
 FQuery.Active := true;
 FQuery.Open;
 

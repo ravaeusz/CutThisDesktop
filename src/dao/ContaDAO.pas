@@ -50,7 +50,7 @@ q := TFDQuery.Create(nil);
 try
 q.Connection := TConexao.getConexao;
 q.sql.Text := 'delete from CONTA where ct_id = :id';
-q.FieldByName('id').AsInteger := AId;
+q.ParamByName('id').AsInteger := AId;
 q.ExecSQL;
 
 finally
@@ -68,11 +68,11 @@ try
 q.Connection := TConexao.getConexao;
 q.SQL.Text := 'update CONTA set CT_DESC = :desc, CT_PRECO = :preco, CT_USER = :user,' +
 'CT_VIAGEM = :viagem where ct_id = :id';
-q.FieldByName('desc').AsString := AConta.Descricao;
-q.FieldByName('preco').AsCurrency := AConta.Preco;
-q.FieldByName('user').AsInteger := AConta.CreateByUser;
-q.FieldByName('viagem').AsInteger :=AConta.OfViagem;
-q.FieldByName('id').AsInteger := AId;
+q.ParamByName('desc').AsString := AConta.Descricao;
+q.ParamByName('preco').AsCurrency := AConta.Preco;
+q.ParamByName('user').AsInteger := AConta.CreateByUser;
+q.ParamByName('viagem').AsInteger :=AConta.OfViagem;
+q.ParamByName('id').AsInteger := AId;
 q.ExecSQL;
 finally
   q.Free;

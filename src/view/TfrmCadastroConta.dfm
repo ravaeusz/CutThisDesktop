@@ -90,21 +90,13 @@ object FormularioCadastroConta: TFormularioCadastroConta
       CharCase = ecUpperCase
       TabOrder = 0
     end
-    object EditPrecoConta: TEdit
-      Left = 40
-      Top = 152
-      Width = 233
-      Height = 23
-      CharCase = ecUpperCase
-      TabOrder = 1
-    end
     object EditParticipante: TEdit
       Left = 40
       Top = 224
       Width = 233
       Height = 23
       CharCase = ecUpperCase
-      TabOrder = 2
+      TabOrder = 1
     end
     object BtnCadastro: TButton
       Left = 40
@@ -112,8 +104,16 @@ object FormularioCadastroConta: TFormularioCadastroConta
       Width = 233
       Height = 41
       Caption = 'Cadastrar'
-      TabOrder = 3
+      TabOrder = 2
       OnClick = BtnCadastroClick
+    end
+    object EditPrecoConta: TEdit
+      Left = 40
+      Top = 157
+      Width = 233
+      Height = 23
+      CharCase = ecUpperCase
+      TabOrder = 3
     end
   end
 end

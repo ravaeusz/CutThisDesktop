@@ -158,6 +158,8 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\controller\UContaController.pas"/>
+        <DCCReference Include="src\dao\ParticipanteDAO.pas"/>
+        <DCCReference Include="src\controller\UParticipanteController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
