@@ -11,6 +11,7 @@ public
 constructor Create;
 destructor Destroy; override;
  function createConta(Aconta : TConta): string;
+ procedure deleteConta(Aid : integer);
 
 end;
 
@@ -42,6 +43,11 @@ Result := 'Erro ao cadastrar';
 end;
 end;
 
+
+procedure TContaController.deleteConta(Aid: integer);
+begin
+FDAO.deleteConta(Aid);
+end;
 
 destructor TContaController.Destroy;
 begin

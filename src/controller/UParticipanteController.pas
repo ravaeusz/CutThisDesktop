@@ -12,7 +12,7 @@ public
 constructor Create;
 destructor Destroy; override;
  function createConta(AParticipante: TParticipante): string;
-
+ procedure deleteConta(Aid:integer);
 end;
 
 
@@ -43,6 +43,17 @@ except
 Result := 'Erro ao cadastrar';
 end;
 
+end;
+
+procedure TParticipantesController.deleteConta(Aid : integer);
+begin
+
+try
+FDAO.deleteParticipantes(Aid)
+
+except
+raise Exception.Create('Usuario com conta cadastrada.');
+end;
 end;
 
 destructor TParticipantesController.Destroy;

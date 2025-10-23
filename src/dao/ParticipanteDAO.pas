@@ -50,9 +50,11 @@ q := TFDQuery.Create(nil);
 
 try
 q.Connection := TConexao.getConexao;
-q.sql.Text := 'delete from PARTICIPANTES where ct_id = :id';
-q.FieldByName('id').AsInteger := AId;
+q.sql.Text := 'delete from PARTICIPANTES where pt_id = :id';
+q.ParamByName('id').AsInteger := AId;
 q.ExecSQL;
+
+
 
 finally
   q.Free;
@@ -68,7 +70,7 @@ q := TFDQuery.Create(nil);
 
 try
 q.Connection := TConexao.getConexao;
-q.SQL.Text := 'update PARTICIPANTES set PT_NOME = :NOME where ct_id = :id';
+q.SQL.Text := 'update PARTICIPANTES set PT_NOME = :NOME where pt_id = :id';
 q.ParamByName('NOME').AsString := AParticipantes.Nome;
 q.ParamByName('id').AsInteger := AId;
 finally

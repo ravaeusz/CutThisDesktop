@@ -31,12 +31,15 @@ type
     BtnCadastroParticipante: TButton;
     dsConta: TDataSource;
     dsParticipantes: TDataSource;
+    Label4: TLabel;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtnCadastroContaClick(Sender: TObject);
     procedure BtnCadastroParticipanteClick(Sender: TObject);
+    procedure GridContaDblClick(Sender: TObject);
+    procedure GridParticipantesDblClick(Sender: TObject);
 
   private
 
@@ -52,7 +55,7 @@ implementation
 {$R *.dfm}
 
 uses TfrmPrincipal, UGridController, UGridControllerViagem, TfrmCadastroConta ,
-  TfrmCadastroParticipante;
+  TfrmCadastroParticipante, UParticipanteController, UContaController;
 
 
 
@@ -108,6 +111,33 @@ grid := TGridControllerViagem.Create(Self);
 FIdViagem := grid.getViagemId(LblViagemNome.Caption);
 grid.madeGridConta;
 grid.madeGridParticipantes;
+
+end;
+
+procedure TFormularioViagem.GridContaDblClick(Sender: TObject);
+var
+resultado : integer;
+controller : Tcontacontroller;
+begin
+controller := Tcontacontroller.Create;
+
+resultado := MessageDlg('Deseja excluir o item?', TMsgDlgType.mtWarning, mbYesNo, 0);
+if resultado = 6 then
+controller.deleteConta(dsConta.DataSet.FieldByName('CT_ID').AsInteger);
+dsConta.DataSet.Refresh;
+end;
+
+procedure TFormularioViagem.GridParticipantesDblClick(Sender: TObject);
+var
+resultado : integer;
+controller : TParticipantesController;
+begin
+controller := TParticipantesController.Create;
+
+resultado := MessageDlg('Deseja excluir o participante?', TMsgDlgType.mtWarning, mbYesNo, 0);
+if resultado = 6 then
+controller.deleteConta(dsParticipantes.DataSet.FieldByName('PT_ID').AsInteger);
+dsParticipantes.DataSet.Refresh;
 
 end;
 

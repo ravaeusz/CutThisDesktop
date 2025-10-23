@@ -63,7 +63,7 @@ col.Title.Caption := 'DESCRIÇÃO';
 col.Width := 180;
 
 col := FormViagem.GridConta.Columns.Add;
-col.FieldName := 'CT_VALOR';
+col.FieldName := 'CT_PRECO';
 col.Title.Caption := 'VALOR';
 col.Width := 70;
 

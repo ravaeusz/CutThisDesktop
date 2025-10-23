@@ -113,6 +113,19 @@ object FormularioViagem: TFormularioViagem
       Font.Style = []
       ParentFont = False
     end
+    object Label4: TLabel
+      Left = 374
+      Top = 71
+      Width = 272
+      Height = 32
+      Caption = '* Duplo clique para excluir conta '#13#10'ou participante'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'JetBrains Mono ExtraLight'
+      Font.Style = []
+      ParentFont = False
+    end
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -298,6 +311,7 @@ object FormularioViagem: TFormularioViagem
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      OnDblClick = GridContaDblClick
     end
     object GridParticipantes: TDBGrid
       Left = 342
@@ -318,6 +332,7 @@ object FormularioViagem: TFormularioViagem
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      OnDblClick = GridParticipantesDblClick
     end
     object BtnAcertoConta: TButton
       Left = 342
