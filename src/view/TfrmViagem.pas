@@ -36,6 +36,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure BtnCadastroContaClick(Sender: TObject);
+    procedure BtnCadastroParticipanteClick(Sender: TObject);
 
   private
 
@@ -50,7 +51,8 @@ implementation
 
 {$R *.dfm}
 
-uses TfrmPrincipal, UGridController, UGridControllerViagem, TfrmCadastroConta ;
+uses TfrmPrincipal, UGridController, UGridControllerViagem, TfrmCadastroConta ,
+  TfrmCadastroParticipante;
 
 
 
@@ -68,6 +70,22 @@ dsConta.DataSet.Refresh;
 finally
 cadastro.free;
 end;
+end;
+
+procedure TFormularioViagem.BtnCadastroParticipanteClick(Sender: TObject);
+var
+cadastro : TFormularioCadastroParticipante;
+begin
+cadastro := TFormularioCadastroParticipante.Create(nil);
+
+try
+cadastro.getViagem(FIdViagem);
+cadastro.ShowModal;
+dsParticipantes.DataSet.Refresh;
+finally
+  cadastro.Free;
+end;
+
 end;
 
 procedure TFormularioViagem.Button1Click(Sender: TObject);

@@ -361,6 +361,7 @@ object FormularioViagem: TFormularioViagem
       Font.Style = []
       ParentFont = False
       TabOrder = 6
+      OnClick = BtnCadastroParticipanteClick
     end
   end
   object Timer1: TTimer

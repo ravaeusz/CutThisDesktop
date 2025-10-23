@@ -7,11 +7,11 @@ type
 TParticipantesController = class
 private
   FDAO : TPartDAO;
+  FViagem : integer;
 public
 constructor Create;
 destructor Destroy; override;
  function createConta(AParticipante: TParticipante): string;
-
 
 end;
 
@@ -50,5 +50,7 @@ begin
 FDAO.Free;
 inherited;
 end;
+
+
 
 end.
