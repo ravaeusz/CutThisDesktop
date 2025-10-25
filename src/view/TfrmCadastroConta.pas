@@ -19,6 +19,11 @@ type
     BtnCadastro: TButton;
     EditPrecoConta: TEdit;
     procedure BtnCadastroClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure EditDescContaKeyPress(Sender: TObject; var Key: Char);
+    procedure EditPrecoContaKeyPress(Sender: TObject; var Key: Char);
+    procedure BtnCadastroKeyPress(Sender: TObject; var Key: Char);
+    procedure EditParticipanteKeyPress(Sender: TObject; var Key: Char);
   private
     FViagem: integer;
     { Private declarations }
@@ -64,6 +69,37 @@ finally
   Controller.free;
   model.free;
 end;
+end;
+
+procedure TFormularioCadastroConta.BtnCadastroKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+BtnCadastro.Click;
+end;
+
+procedure TFormularioCadastroConta.EditDescContaKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if key = char(#13) then
+EditPrecoConta.SetFocus;
+end;
+
+procedure TFormularioCadastroConta.EditParticipanteKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+BtnCadastro.SetFocus;
+end;
+
+procedure TFormularioCadastroConta.EditPrecoContaKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if key = char(#13) then
+EditParticipante.SetFocus;
+end;
+
+procedure TFormularioCadastroConta.FormShow(Sender: TObject);
+begin
+EditDescConta.SetFocus;
 end;
 
 procedure TFormularioCadastroConta.getViagem(AId : integer);

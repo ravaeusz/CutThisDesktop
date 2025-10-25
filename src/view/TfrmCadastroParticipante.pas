@@ -14,6 +14,9 @@ type
     EditNome: TEdit;
     BtnCadastro: TButton;
     procedure BtnCadastroClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure EditNomeKeyPress(Sender: TObject; var Key: Char);
+    procedure BtnCadastroKeyPress(Sender: TObject; var Key: Char);
   private
    FViagem : integer;
   public
@@ -55,6 +58,24 @@ controller.Free;
 end;
 
 
+end;
+
+procedure TFormularioCadastroParticipante.BtnCadastroKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+BtnCadastro.Click;
+end;
+
+procedure TFormularioCadastroParticipante.EditNomeKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if key = char(#13) then
+BtnCadastro.SetFocus;
+end;
+
+procedure TFormularioCadastroParticipante.FormShow(Sender: TObject);
+begin
+EditNome.SetFocus;
 end;
 
 procedure TFormularioCadastroParticipante.getViagem(AId: integer);

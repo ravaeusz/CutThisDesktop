@@ -15,10 +15,26 @@ destructor Destroy; override;
 procedure madeGridConta;
 procedure madeGridParticipantes;
 function getViagemId(AViagem: string): integer;
+procedure acertoContas(AId : integer);
 end;
 implementation
 
 { TGridControllerViagem }
+
+procedure TGridControllerViagem.acertoContas(AId: integer);
+var
+viagem : TViagemDAO;
+begin
+viagem := TViagemDAO.Create;
+
+try
+viagem.getAcertoContas(FIdViagem);
+finally
+viagem.Free;
+end;
+
+end;
+
 
 constructor TGridControllerViagem.Create(Aform: TFormularioViagem);
 begin

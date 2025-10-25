@@ -13,6 +13,7 @@ public
   function getViagem : TFDQuery;
   function getOnlyViagem(AId : integer) : TViagem;
   function retornaIdViagem(AViagem : string) : integer;
+  function getAcertoContas(AidViagem : integer) : TFDQuery;
 end;
 
 implementation
@@ -34,6 +35,61 @@ q.ExecSQL;
 finally
   q.Free;
 end;
+
+end;
+
+function TViagemDAO.getAcertoContas(AidViagem: integer): TFDQuery;
+var
+  Q : TFDQuery;
+  SQL: string;
+begin
+  SQL :=
+     'WITH total AS (' +
+  '    SELECT SUM(ct_preco) AS total ' +
+  '    FROM conta ' +
+  '    WHERE ct_viagem = :viagem' +
+  '),' +
+  'qtd AS (' +
+  '    SELECT COUNT(*) AS qtd ' +
+  '    FROM participantes ' +
+  '    WHERE pt_viagem = :viagem' +
+  '),' +
+  'pagos AS (' +
+  '    SELECT p.pt_id, p.pt_nome, COALESCE(SUM(c.ct_preco), 0) AS total_pago ' +
+  '    FROM participantes p ' +
+  '    LEFT JOIN conta c ON c.ct_user = p.pt_id ' +
+  '    WHERE p.pt_viagem = :viagem ' +
+  '    GROUP BY p.pt_id, p.pt_nome' +
+  ')' +
+  'SELECT ' +
+  '    pagos.pt_id, ' +
+  '    pagos.pt_nome, ' +
+  '    CAST(pagos.total_pago AS NUMERIC(10,2)) AS total_pago, ' +
+  '    CAST((total.total / qtd.qtd) AS NUMERIC(10,2)) AS deveria_pagar, ' +
+  '    CAST((pagos.total_pago - (total.total / qtd.qtd)) AS NUMERIC(10,2)) AS diferenca, ' +
+  '    CASE ' +
+  '        WHEN (pagos.total_pago - (total.total / qtd.qtd)) > 0 THEN ' +
+  '            ''Receber R$ '' || CAST(ABS(CAST((pagos.total_pago - (total.total / qtd.qtd)) AS NUMERIC(10,2))) AS VARCHAR(20)) ' +
+  '        WHEN (pagos.total_pago - (total.total / qtd.qtd)) < 0 THEN ' +
+  '            ''Pagar R$ '' || CAST(ABS(CAST((pagos.total_pago - (total.total / qtd.qtd)) AS NUMERIC(10,2))) AS VARCHAR(20)) ' +
+  '        ELSE ' +
+  '            ''Nada a pagar ou receber'' ' +
+  '    END AS situacao ' +
+  'FROM pagos, total, qtd ' +
+  'ORDER BY pagos.pt_nome;';
+
+
+     Q := TFDQuery.Create(nil);
+
+
+     Q.Connection := TConexao.getConexao;
+     Q.SQL.Text := SQL;
+     q.ParamByName('viagem').AsInteger := AidViagem;
+     q.Open;
+
+     Result := Q;
+
+
 
 end;
 
@@ -106,7 +162,7 @@ end;
 
 end;
 
-function TViagemDAO.retornaIdViagem(AViagem: string): integer;
+  function TViagemDAO.retornaIdViagem(AViagem: string): integer;
 var
 Q : TFDQuery;
 begin

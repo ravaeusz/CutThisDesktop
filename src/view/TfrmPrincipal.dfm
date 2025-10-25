@@ -115,6 +115,8 @@ object FormularioPrincipal: TFormularioPrincipal
           Font.Style = []
           ParentFont = False
           TabOrder = 0
+          OnClick = Button2Click
+          OnKeyPress = Button2KeyPress
         end
       end
       object Panel5: TPanel
@@ -160,6 +162,7 @@ object FormularioPrincipal: TFormularioPrincipal
           Font.Style = []
           ParentFont = False
           TabOrder = 0
+          OnKeyPress = EditSelecaoKeyPress
           ExplicitHeight = 25
         end
       end

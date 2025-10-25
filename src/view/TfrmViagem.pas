@@ -40,6 +40,7 @@ type
     procedure BtnCadastroParticipanteClick(Sender: TObject);
     procedure GridContaDblClick(Sender: TObject);
     procedure GridParticipantesDblClick(Sender: TObject);
+    procedure BtnAcertoContaClick(Sender: TObject);
 
   private
 
@@ -55,9 +56,28 @@ implementation
 {$R *.dfm}
 
 uses TfrmPrincipal, UGridController, UGridControllerViagem, TfrmCadastroConta ,
-  TfrmCadastroParticipante, UParticipanteController, UContaController;
+  TfrmCadastroParticipante, UParticipanteController, UContaController, TfrmAcertoConta;
 
 
+
+procedure TFormularioViagem.BtnAcertoContaClick(Sender: TObject);
+var
+acerto : TFormularioAcerto;
+grid : TGridControllerViagem;
+begin
+acerto := TFormularioAcerto.Create(nil);
+grid := TGridControllerViagem.Create(nil);
+try
+
+acerto.getId(FIdViagem);
+acerto.ShowModal;
+
+finally
+acerto.free;
+grid.free;
+end;
+
+end;
 
 procedure TFormularioViagem.BtnCadastroContaClick(Sender: TObject);
 var
@@ -140,6 +160,7 @@ controller.deleteConta(dsParticipantes.DataSet.FieldByName('PT_ID').AsInteger);
 dsParticipantes.DataSet.Refresh;
 
 end;
+
 
 procedure TFormularioViagem.Timer1Timer(Sender: TObject);
 begin

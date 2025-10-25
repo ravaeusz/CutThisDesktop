@@ -160,6 +160,14 @@
         <DCCReference Include="src\controller\UContaController.pas"/>
         <DCCReference Include="src\dao\ParticipanteDAO.pas"/>
         <DCCReference Include="src\controller\UParticipanteController.pas"/>
+        <DCCReference Include="src\view\TfrmCadastroParticipante.pas">
+            <Form>FormularioCadastroParticipante</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\view\TfrmAcertoConta.pas">
+            <Form>FormularioAcerto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

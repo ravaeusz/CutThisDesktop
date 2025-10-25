@@ -24,7 +24,9 @@ uses
   TfrmCadastroConta in 'src\view\TfrmCadastroConta.pas' {FormularioCadastroConta},
   UContaController in 'src\controller\UContaController.pas',
   ParticipanteDAO in 'src\dao\ParticipanteDAO.pas',
-  UParticipanteController in 'src\controller\UParticipanteController.pas';
+  UParticipanteController in 'src\controller\UParticipanteController.pas',
+  TfrmCadastroParticipante in 'src\view\TfrmCadastroParticipante.pas' {FormularioCadastroParticipante},
+  TfrmAcertoConta in 'src\view\TfrmAcertoConta.pas' {FormularioAcerto};
 
 {$R *.res}
 
@@ -36,5 +38,7 @@ begin
   Application.CreateForm(TFormularioLogin, FormularioLogin);
   Application.CreateForm(TFormularioViagem, FormularioViagem);
   Application.CreateForm(TFormularioCadastroConta, FormularioCadastroConta);
+  Application.CreateForm(TFormularioCadastroParticipante, FormularioCadastroParticipante);
+  Application.CreateForm(TFormularioAcerto, FormularioAcerto);
   Application.Run;
 end.

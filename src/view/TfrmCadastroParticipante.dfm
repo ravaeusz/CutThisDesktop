@@ -1,6 +1,6 @@
 object FormularioCadastroParticipante: TFormularioCadastroParticipante
-  Left = 694
-  Top = 208
+  Left = 817
+  Top = 249
   Caption = 'FormularioCadastroParticipante'
   ClientHeight = 394
   ClientWidth = 312
@@ -11,6 +11,7 @@ object FormularioCadastroParticipante: TFormularioCadastroParticipante
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -23,8 +24,6 @@ object FormularioCadastroParticipante: TFormularioCadastroParticipante
     Padding.Top = 20
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 72
-    ExplicitTop = 24
     object LblTitulo: TLabel
       Left = 0
       Top = 20
@@ -39,7 +38,7 @@ object FormularioCadastroParticipante: TFormularioCadastroParticipante
       Font.Name = 'JetBrains Mono ExtraBold'
       Font.Style = []
       ParentFont = False
-      ExplicitTop = 44
+      ExplicitWidth = 210
     end
     object Label1: TLabel
       Left = 20
@@ -62,6 +61,7 @@ object FormularioCadastroParticipante: TFormularioCadastroParticipante
       Height = 23
       CharCase = ecUpperCase
       TabOrder = 0
+      OnKeyPress = EditNomeKeyPress
     end
     object BtnCadastro: TButton
       Left = 40
@@ -71,6 +71,7 @@ object FormularioCadastroParticipante: TFormularioCadastroParticipante
       Caption = 'Cadastrar'
       TabOrder = 1
       OnClick = BtnCadastroClick
+      OnKeyPress = BtnCadastroKeyPress
     end
   end
 end

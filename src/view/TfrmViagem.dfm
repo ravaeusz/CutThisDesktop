@@ -347,6 +347,7 @@ object FormularioViagem: TFormularioViagem
       Font.Style = []
       ParentFont = False
       TabOrder = 4
+      OnClick = BtnAcertoContaClick
     end
     object BtnCadastroConta: TButton
       Left = 13

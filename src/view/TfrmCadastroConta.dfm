@@ -1,6 +1,6 @@
 object FormularioCadastroConta: TFormularioCadastroConta
-  Left = 694
-  Top = 187
+  Left = 490
+  Top = 249
   BorderStyle = bsDialog
   Caption = 'FormularioCadastroConta'
   ClientHeight = 394
@@ -12,6 +12,7 @@ object FormularioCadastroConta: TFormularioCadastroConta
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -89,6 +90,7 @@ object FormularioCadastroConta: TFormularioCadastroConta
       Height = 23
       CharCase = ecUpperCase
       TabOrder = 0
+      OnKeyPress = EditDescContaKeyPress
     end
     object EditParticipante: TEdit
       Left = 40
@@ -97,6 +99,7 @@ object FormularioCadastroConta: TFormularioCadastroConta
       Height = 23
       CharCase = ecUpperCase
       TabOrder = 1
+      OnKeyPress = EditParticipanteKeyPress
     end
     object BtnCadastro: TButton
       Left = 40
@@ -106,6 +109,7 @@ object FormularioCadastroConta: TFormularioCadastroConta
       Caption = 'Cadastrar'
       TabOrder = 2
       OnClick = BtnCadastroClick
+      OnKeyPress = BtnCadastroKeyPress
     end
     object EditPrecoConta: TEdit
       Left = 40
@@ -114,6 +118,7 @@ object FormularioCadastroConta: TFormularioCadastroConta
       Height = 23
       CharCase = ecUpperCase
       TabOrder = 3
+      OnKeyPress = EditPrecoContaKeyPress
     end
   end
 end

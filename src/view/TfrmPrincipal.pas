@@ -31,6 +31,9 @@ type
     procedure BtnCadastroClick(Sender: TObject);
     procedure DBGridViagemDblClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure EditSelecaoKeyPress(Sender: TObject; var Key: Char);
+    procedure Button2KeyPress(Sender: TObject; var Key: Char);
 
 
   private
@@ -54,6 +57,18 @@ uses TfrmLogin, TfrmCadastroViagem , UGridDAO , UGridController, ViagemDAO,
 procedure TFormularioPrincipal.Button1Click(Sender: TObject);
 begin
 Application.Terminate;
+end;
+
+procedure TFormularioPrincipal.Button2Click(Sender: TObject);
+begin
+dsViagem.DataSet.Filtered := False;
+dsViagem.DataSet.Filter := 'VI_NOME LIKE ' + QuotedStr(EditSelecao.text);
+dsViagem.DataSet.Filtered := True;
+end;
+
+procedure TFormularioPrincipal.Button2KeyPress(Sender: TObject; var Key: Char);
+begin
+Button2.Click;
 end;
 
 procedure TFormularioPrincipal.DBGridViagemDblClick(Sender: TObject);
@@ -114,6 +129,13 @@ end;
 end;
 
 
+
+procedure TFormularioPrincipal.EditSelecaoKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if key = char(#13) then
+Button2.SetFocus;
+end;
 
 procedure TFormularioPrincipal.FormShow(Sender: TObject);
 var
